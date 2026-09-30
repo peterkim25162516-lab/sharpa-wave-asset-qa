@@ -21,6 +21,11 @@ On Linux, run `bash scripts/fetch_sharpa_assets.sh external/lfstd` before `pytes
 On Windows, run `git config --local core.autocrlf false`, then
 `./scripts/fetch_sharpa_assets.ps1 -Destination external/lfstd`.
 Assets are fetched separately and remain ignored; CI performs this fetch automatically.
+The asset validator supports Python 3.10; the pinned experimental campaigns use Python
+3.12. Three tests invoke the campaign subprocess safe-path flag (`-P`, introduced in
+Python 3.11) and are explicitly skipped on 3.10. CI runs them on 3.12. Launcher unit
+tests supply frozen runtime observations as fixtures to test rejection/ownership rules
+on either host; actual campaign version and executable-hash guards remain unchanged.
 
 The original source snapshot was `6de3f6b84c6f808bca44e57381265c6861601f23`.
 Initial GitHub publication date: 2026-09-30 (Asia/Shanghai).

@@ -5,6 +5,21 @@ import sys
 import pytest
 
 
+def pytest_collection_modifyitems(items):
+    if sys.version_info >= (3, 11):
+        return
+    requires_safe_path = {
+        "test_contact_adapter_import_is_cpu_safe",
+        "test_process_helper_uses_direct_fresh_worker_and_captures_streams",
+        "test_launcher_payload_validation_keeps_pinned_site_packages_available",
+    }
+    for item in items:
+        if item.originalname in requires_safe_path:
+            item.add_marker(pytest.mark.skip(
+                reason="campaign subprocess -P requires Python >=3.11; experiments pin 3.12"
+            ))
+
+
 @pytest.fixture(autouse=True)
 def portable_launcher_unit_inputs(request, monkeypatch):
     name = request.module.__name__
