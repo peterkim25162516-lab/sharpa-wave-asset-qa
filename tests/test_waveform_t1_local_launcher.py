@@ -264,9 +264,7 @@ def test_local_launcher_runs_exact_16_fresh_cases_and_keeps_hashed_evidence(
         "python_implementation": "CPython",
         "platform": "Windows-11-10.0.26200-SP0",
         "machine": "AMD64",
-        "python_executable_sha256": sha256(
-            Path(sys.executable).read_bytes()
-        ).hexdigest(),
+        "python_executable_sha256": launcher.EXPECTED_LOCAL_PYTHON_EXECUTABLE_SHA256,
     }
     assert completed["source_bridge_included"] is False
     _assert_hash_inventory(launcher_dir)
