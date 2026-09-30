@@ -16,6 +16,12 @@ hashes; access to the private evidence is required for independently verifying t
 CPU installation and tests are reproducible from this checkout; remote campaigns require
 the pinned dependencies and an explicitly configured compatible GPU environment.
 
+The full test suite also requires the pinned public assets at `external/lfstd`.
+On Linux, run `bash scripts/fetch_sharpa_assets.sh external/lfstd` before `pytest`.
+On Windows, run `git config --local core.autocrlf false`, then
+`./scripts/fetch_sharpa_assets.ps1 -Destination external/lfstd`.
+Assets are fetched separately and remain ignored; CI performs this fetch automatically.
+
 The original source snapshot was `6de3f6b84c6f808bca44e57381265c6861601f23`.
 Initial GitHub publication date: 2026-09-30 (Asia/Shanghai).
 This is an unofficial, simulation-only project.
