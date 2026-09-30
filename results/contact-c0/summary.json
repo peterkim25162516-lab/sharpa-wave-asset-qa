@@ -1,0 +1,720 @@
+{
+  "case_metrics": [
+    {
+      "case_id": "mujoco.left.press_hold_release.contact.base.r01",
+      "debounce_interval_count": 2,
+      "hold_duty": 1.0,
+      "initial_gap_m": 0.06439999999917201,
+      "minimum_gap_m": -0.00031102385734759885,
+      "onset_gap_m": -0.00013747208092662177,
+      "onset_interval": {
+        "end_s": 2.488,
+        "first_sample_index": 1244,
+        "midpoint_s": 2.487,
+        "start_s": 2.486
+      },
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06438678731888897,
+      "release_interval": {
+        "end_s": 4.626,
+        "first_sample_index": 2313,
+        "midpoint_s": 4.625,
+        "start_s": 4.6240000000000006
+      },
+      "steady_hold_mean_gap_m": -0.0002571122205505396
+    },
+    {
+      "case_id": "mujoco.left.press_hold_release.contact.base.r02",
+      "debounce_interval_count": 2,
+      "hold_duty": 1.0,
+      "initial_gap_m": 0.06439999999917201,
+      "minimum_gap_m": -0.00031102385734759885,
+      "onset_gap_m": -0.00013747208092662177,
+      "onset_interval": {
+        "end_s": 2.488,
+        "first_sample_index": 1244,
+        "midpoint_s": 2.487,
+        "start_s": 2.486
+      },
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06438678731888897,
+      "release_interval": {
+        "end_s": 4.626,
+        "first_sample_index": 2313,
+        "midpoint_s": 4.625,
+        "start_s": 4.6240000000000006
+      },
+      "steady_hold_mean_gap_m": -0.0002571122205505396
+    },
+    {
+      "case_id": "mujoco.left.press_hold_release.contact.halved.r01",
+      "debounce_interval_count": 4,
+      "hold_duty": 1.0,
+      "initial_gap_m": 0.06439999999917201,
+      "minimum_gap_m": -0.0003118818683893699,
+      "onset_gap_m": -7.242960120756436e-05,
+      "onset_interval": {
+        "end_s": 2.486,
+        "first_sample_index": 2486,
+        "midpoint_s": 2.4855,
+        "start_s": 2.4850000000000003
+      },
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06438681716661587,
+      "release_interval": {
+        "end_s": 4.624,
+        "first_sample_index": 4624,
+        "midpoint_s": 4.6235,
+        "start_s": 4.622999999999999
+      },
+      "steady_hold_mean_gap_m": -0.0002571098433109446
+    },
+    {
+      "case_id": "mujoco.left.press_hold_release.contact.halved.r02",
+      "debounce_interval_count": 4,
+      "hold_duty": 1.0,
+      "initial_gap_m": 0.06439999999917201,
+      "minimum_gap_m": -0.0003118818683893699,
+      "onset_gap_m": -7.242960120756436e-05,
+      "onset_interval": {
+        "end_s": 2.486,
+        "first_sample_index": 2486,
+        "midpoint_s": 2.4855,
+        "start_s": 2.4850000000000003
+      },
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06438681716661587,
+      "release_interval": {
+        "end_s": 4.624,
+        "first_sample_index": 4624,
+        "midpoint_s": 4.6235,
+        "start_s": 4.622999999999999
+      },
+      "steady_hold_mean_gap_m": -0.0002571098433109446
+    },
+    {
+      "case_id": "mujoco.left.press_hold_release.sham.base.r01",
+      "debounce_interval_count": 2,
+      "hold_duty": 0.0,
+      "initial_gap_m": 0.06439999999917201,
+      "minimum_gap_m": -0.010390438374113447,
+      "onset_gap_m": null,
+      "onset_interval": null,
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06438678731888897,
+      "release_interval": null,
+      "steady_hold_mean_gap_m": -0.009811847623301494
+    },
+    {
+      "case_id": "mujoco.left.press_hold_release.sham.base.r02",
+      "debounce_interval_count": 2,
+      "hold_duty": 0.0,
+      "initial_gap_m": 0.06439999999917201,
+      "minimum_gap_m": -0.010390438374113447,
+      "onset_gap_m": null,
+      "onset_interval": null,
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06438678731888897,
+      "release_interval": null,
+      "steady_hold_mean_gap_m": -0.009811847623301494
+    },
+    {
+      "case_id": "mujoco.left.press_hold_release.sham.halved.r01",
+      "debounce_interval_count": 4,
+      "hold_duty": 0.0,
+      "initial_gap_m": 0.06439999999917201,
+      "minimum_gap_m": -0.01039130710976657,
+      "onset_gap_m": null,
+      "onset_interval": null,
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06438681716661587,
+      "release_interval": null,
+      "steady_hold_mean_gap_m": -0.009813820887394643
+    },
+    {
+      "case_id": "mujoco.left.press_hold_release.sham.halved.r02",
+      "debounce_interval_count": 4,
+      "hold_duty": 0.0,
+      "initial_gap_m": 0.06439999999917201,
+      "minimum_gap_m": -0.01039130710976657,
+      "onset_gap_m": null,
+      "onset_interval": null,
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06438681716661587,
+      "release_interval": null,
+      "steady_hold_mean_gap_m": -0.009813820887394643
+    },
+    {
+      "case_id": "mujoco.right.press_hold_release.contact.base.r01",
+      "debounce_interval_count": 2,
+      "hold_duty": 1.0,
+      "initial_gap_m": 0.06439999999917201,
+      "minimum_gap_m": -0.00031102385740982685,
+      "onset_gap_m": -0.00013747208100236673,
+      "onset_interval": {
+        "end_s": 2.488,
+        "first_sample_index": 1244,
+        "midpoint_s": 2.487,
+        "start_s": 2.486
+      },
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06438678731889125,
+      "release_interval": {
+        "end_s": 4.626,
+        "first_sample_index": 2313,
+        "midpoint_s": 4.625,
+        "start_s": 4.6240000000000006
+      },
+      "steady_hold_mean_gap_m": -0.0002571122206176001
+    },
+    {
+      "case_id": "mujoco.right.press_hold_release.contact.base.r02",
+      "debounce_interval_count": 2,
+      "hold_duty": 1.0,
+      "initial_gap_m": 0.06439999999917201,
+      "minimum_gap_m": -0.00031102385740982685,
+      "onset_gap_m": -0.00013747208100236673,
+      "onset_interval": {
+        "end_s": 2.488,
+        "first_sample_index": 1244,
+        "midpoint_s": 2.487,
+        "start_s": 2.486
+      },
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06438678731889125,
+      "release_interval": {
+        "end_s": 4.626,
+        "first_sample_index": 2313,
+        "midpoint_s": 4.625,
+        "start_s": 4.6240000000000006
+      },
+      "steady_hold_mean_gap_m": -0.0002571122206176001
+    },
+    {
+      "case_id": "mujoco.right.press_hold_release.contact.halved.r01",
+      "debounce_interval_count": 4,
+      "hold_duty": 1.0,
+      "initial_gap_m": 0.06439999999917201,
+      "minimum_gap_m": -0.0003118818684515979,
+      "onset_gap_m": -7.242960128389219e-05,
+      "onset_interval": {
+        "end_s": 2.486,
+        "first_sample_index": 2486,
+        "midpoint_s": 2.4855,
+        "start_s": 2.4850000000000003
+      },
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.0643868171666181,
+      "release_interval": {
+        "end_s": 4.624,
+        "first_sample_index": 4624,
+        "midpoint_s": 4.6235,
+        "start_s": 4.622999999999999
+      },
+      "steady_hold_mean_gap_m": -0.0002571098433780176
+    },
+    {
+      "case_id": "mujoco.right.press_hold_release.contact.halved.r02",
+      "debounce_interval_count": 4,
+      "hold_duty": 1.0,
+      "initial_gap_m": 0.06439999999917201,
+      "minimum_gap_m": -0.0003118818684515979,
+      "onset_gap_m": -7.242960128389219e-05,
+      "onset_interval": {
+        "end_s": 2.486,
+        "first_sample_index": 2486,
+        "midpoint_s": 2.4855,
+        "start_s": 2.4850000000000003
+      },
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.0643868171666181,
+      "release_interval": {
+        "end_s": 4.624,
+        "first_sample_index": 4624,
+        "midpoint_s": 4.6235,
+        "start_s": 4.622999999999999
+      },
+      "steady_hold_mean_gap_m": -0.0002571098433780176
+    },
+    {
+      "case_id": "mujoco.right.press_hold_release.sham.base.r01",
+      "debounce_interval_count": 2,
+      "hold_duty": 0.0,
+      "initial_gap_m": 0.06439999999917201,
+      "minimum_gap_m": -0.01039043837417605,
+      "onset_gap_m": null,
+      "onset_interval": null,
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.0643867873188908,
+      "release_interval": null,
+      "steady_hold_mean_gap_m": -0.009811847623397074
+    },
+    {
+      "case_id": "mujoco.right.press_hold_release.sham.base.r02",
+      "debounce_interval_count": 2,
+      "hold_duty": 0.0,
+      "initial_gap_m": 0.06439999999917201,
+      "minimum_gap_m": -0.01039043837417605,
+      "onset_gap_m": null,
+      "onset_interval": null,
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.0643867873188908,
+      "release_interval": null,
+      "steady_hold_mean_gap_m": -0.009811847623397074
+    },
+    {
+      "case_id": "mujoco.right.press_hold_release.sham.halved.r01",
+      "debounce_interval_count": 4,
+      "hold_duty": 0.0,
+      "initial_gap_m": 0.06439999999917201,
+      "minimum_gap_m": -0.0103913071098292,
+      "onset_gap_m": null,
+      "onset_interval": null,
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.0643868171666177,
+      "release_interval": null,
+      "steady_hold_mean_gap_m": -0.00981382088749033
+    },
+    {
+      "case_id": "mujoco.right.press_hold_release.sham.halved.r02",
+      "debounce_interval_count": 4,
+      "hold_duty": 0.0,
+      "initial_gap_m": 0.06439999999917201,
+      "minimum_gap_m": -0.0103913071098292,
+      "onset_gap_m": null,
+      "onset_interval": null,
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.0643868171666177,
+      "release_interval": null,
+      "steady_hold_mean_gap_m": -0.00981382088749033
+    },
+    {
+      "case_id": "ovphysx.left.press_hold_release.contact.base.r01",
+      "debounce_interval_count": 2,
+      "hold_duty": 1.0,
+      "initial_gap_m": 0.06439998686296833,
+      "minimum_gap_m": -6.412624789075422e-08,
+      "onset_gap_m": 4.216862939821625e-08,
+      "onset_interval": {
+        "end_s": 2.432,
+        "first_sample_index": 1216,
+        "midpoint_s": 2.431,
+        "start_s": 2.43
+      },
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06439998686296833,
+      "release_interval": {
+        "end_s": 4.606,
+        "first_sample_index": 2303,
+        "midpoint_s": 4.605,
+        "start_s": 4.604
+      },
+      "steady_hold_mean_gap_m": -2.1466230831698742e-09
+    },
+    {
+      "case_id": "ovphysx.left.press_hold_release.contact.base.r02",
+      "debounce_interval_count": 2,
+      "hold_duty": 1.0,
+      "initial_gap_m": 0.06439998686296833,
+      "minimum_gap_m": -6.412624789075422e-08,
+      "onset_gap_m": 4.216862939821625e-08,
+      "onset_interval": {
+        "end_s": 2.432,
+        "first_sample_index": 1216,
+        "midpoint_s": 2.431,
+        "start_s": 2.43
+      },
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06439998686296833,
+      "release_interval": {
+        "end_s": 4.606,
+        "first_sample_index": 2303,
+        "midpoint_s": 4.605,
+        "start_s": 4.604
+      },
+      "steady_hold_mean_gap_m": -2.1466230831698742e-09
+    },
+    {
+      "case_id": "ovphysx.left.press_hold_release.contact.halved.r01",
+      "debounce_interval_count": 4,
+      "hold_duty": 1.0,
+      "initial_gap_m": 0.06439998686296833,
+      "minimum_gap_m": -8.524272173803665e-08,
+      "onset_gap_m": -6.413250860492353e-08,
+      "onset_interval": {
+        "end_s": 2.431,
+        "first_sample_index": 2431,
+        "midpoint_s": 2.4305000000000003,
+        "start_s": 2.43
+      },
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06439998686296833,
+      "release_interval": {
+        "end_s": 4.6000000000000005,
+        "first_sample_index": 4600,
+        "midpoint_s": 4.599500000000001,
+        "start_s": 4.599
+      },
+      "steady_hold_mean_gap_m": -2.5239515820049685e-09
+    },
+    {
+      "case_id": "ovphysx.left.press_hold_release.contact.halved.r02",
+      "debounce_interval_count": 4,
+      "hold_duty": 1.0,
+      "initial_gap_m": 0.06439998686296833,
+      "minimum_gap_m": -8.524272173803665e-08,
+      "onset_gap_m": -6.413250860492353e-08,
+      "onset_interval": {
+        "end_s": 2.431,
+        "first_sample_index": 2431,
+        "midpoint_s": 2.4305000000000003,
+        "start_s": 2.43
+      },
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06439998686296833,
+      "release_interval": {
+        "end_s": 4.6000000000000005,
+        "first_sample_index": 4600,
+        "midpoint_s": 4.599500000000001,
+        "start_s": 4.599
+      },
+      "steady_hold_mean_gap_m": -2.5239515820049685e-09
+    },
+    {
+      "case_id": "ovphysx.left.press_hold_release.sham.base.r01",
+      "debounce_interval_count": 2,
+      "hold_duty": 0.0,
+      "initial_gap_m": 0.06439998686296833,
+      "minimum_gap_m": -0.01070190435222183,
+      "onset_gap_m": null,
+      "onset_interval": null,
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06439998686296833,
+      "release_interval": null,
+      "steady_hold_mean_gap_m": -0.01070190435222183
+    },
+    {
+      "case_id": "ovphysx.left.press_hold_release.sham.base.r02",
+      "debounce_interval_count": 2,
+      "hold_duty": 0.0,
+      "initial_gap_m": 0.06439998686296833,
+      "minimum_gap_m": -0.01070190435222183,
+      "onset_gap_m": null,
+      "onset_interval": null,
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06439998686296833,
+      "release_interval": null,
+      "steady_hold_mean_gap_m": -0.01070190435222183
+    },
+    {
+      "case_id": "ovphysx.left.press_hold_release.sham.halved.r01",
+      "debounce_interval_count": 4,
+      "hold_duty": 0.0,
+      "initial_gap_m": 0.06439998686296833,
+      "minimum_gap_m": -0.010701235061219113,
+      "onset_gap_m": null,
+      "onset_interval": null,
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06439998686296833,
+      "release_interval": null,
+      "steady_hold_mean_gap_m": -0.010701235061219113
+    },
+    {
+      "case_id": "ovphysx.left.press_hold_release.sham.halved.r02",
+      "debounce_interval_count": 4,
+      "hold_duty": 0.0,
+      "initial_gap_m": 0.06439998686296833,
+      "minimum_gap_m": -0.010701235061219113,
+      "onset_gap_m": null,
+      "onset_interval": null,
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06439998686296833,
+      "release_interval": null,
+      "steady_hold_mean_gap_m": -0.010701235061219113
+    },
+    {
+      "case_id": "ovphysx.right.press_hold_release.contact.base.r01",
+      "debounce_interval_count": 2,
+      "hold_duty": 1.0,
+      "initial_gap_m": 0.06439997196181785,
+      "minimum_gap_m": -8.140517198784031e-08,
+      "onset_gap_m": 4.019766908659045e-08,
+      "onset_interval": {
+        "end_s": 2.432,
+        "first_sample_index": 1216,
+        "midpoint_s": 2.431,
+        "start_s": 2.43
+      },
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06439997196181785,
+      "release_interval": {
+        "end_s": 4.606,
+        "first_sample_index": 2303,
+        "midpoint_s": 4.605,
+        "start_s": 4.604
+      },
+      "steady_hold_mean_gap_m": -1.0016382747599085e-09
+    },
+    {
+      "case_id": "ovphysx.right.press_hold_release.contact.base.r02",
+      "debounce_interval_count": 2,
+      "hold_duty": 1.0,
+      "initial_gap_m": 0.06439997196181785,
+      "minimum_gap_m": -8.140517198784031e-08,
+      "onset_gap_m": 4.019766908659045e-08,
+      "onset_interval": {
+        "end_s": 2.432,
+        "first_sample_index": 1216,
+        "midpoint_s": 2.431,
+        "start_s": 2.43
+      },
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06439997196181785,
+      "release_interval": {
+        "end_s": 4.606,
+        "first_sample_index": 2303,
+        "midpoint_s": 4.605,
+        "start_s": 4.604
+      },
+      "steady_hold_mean_gap_m": -1.0016382747599085e-09
+    },
+    {
+      "case_id": "ovphysx.right.press_hold_release.contact.halved.r01",
+      "debounce_interval_count": 4,
+      "hold_duty": 1.0,
+      "initial_gap_m": 0.06439997196181785,
+      "minimum_gap_m": -8.531241401776163e-08,
+      "onset_gap_m": -7.943310717083846e-08,
+      "onset_interval": {
+        "end_s": 2.431,
+        "first_sample_index": 2431,
+        "midpoint_s": 2.4305000000000003,
+        "start_s": 2.43
+      },
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06439997196181785,
+      "release_interval": {
+        "end_s": 4.6000000000000005,
+        "first_sample_index": 4600,
+        "midpoint_s": 4.599500000000001,
+        "start_s": 4.599
+      },
+      "steady_hold_mean_gap_m": -1.6480497718115995e-09
+    },
+    {
+      "case_id": "ovphysx.right.press_hold_release.contact.halved.r02",
+      "debounce_interval_count": 4,
+      "hold_duty": 1.0,
+      "initial_gap_m": 0.06439997196181785,
+      "minimum_gap_m": -8.531241401776163e-08,
+      "onset_gap_m": -7.943310717083846e-08,
+      "onset_interval": {
+        "end_s": 2.431,
+        "first_sample_index": 2431,
+        "midpoint_s": 2.4305000000000003,
+        "start_s": 2.43
+      },
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06439997196181785,
+      "release_interval": {
+        "end_s": 4.6000000000000005,
+        "first_sample_index": 4600,
+        "midpoint_s": 4.599500000000001,
+        "start_s": 4.599
+      },
+      "steady_hold_mean_gap_m": -1.6480497718115995e-09
+    },
+    {
+      "case_id": "ovphysx.right.press_hold_release.sham.base.r01",
+      "debounce_interval_count": 2,
+      "hold_duty": 0.0,
+      "initial_gap_m": 0.06439997196181785,
+      "minimum_gap_m": -0.010701938507207739,
+      "onset_gap_m": null,
+      "onset_interval": null,
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06439997196181785,
+      "release_interval": null,
+      "steady_hold_mean_gap_m": -0.010701938507207739
+    },
+    {
+      "case_id": "ovphysx.right.press_hold_release.sham.base.r02",
+      "debounce_interval_count": 2,
+      "hold_duty": 0.0,
+      "initial_gap_m": 0.06439997196181785,
+      "minimum_gap_m": -0.010701938507207739,
+      "onset_gap_m": null,
+      "onset_interval": null,
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06439997196181785,
+      "release_interval": null,
+      "steady_hold_mean_gap_m": -0.010701938507207739
+    },
+    {
+      "case_id": "ovphysx.right.press_hold_release.sham.halved.r01",
+      "debounce_interval_count": 4,
+      "hold_duty": 0.0,
+      "initial_gap_m": 0.06439997196181785,
+      "minimum_gap_m": -0.010701236341300418,
+      "onset_gap_m": null,
+      "onset_interval": null,
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06439997196181785,
+      "release_interval": null,
+      "steady_hold_mean_gap_m": -0.010701236341300418
+    },
+    {
+      "case_id": "ovphysx.right.press_hold_release.sham.halved.r02",
+      "debounce_interval_count": 4,
+      "hold_duty": 0.0,
+      "initial_gap_m": 0.06439997196181785,
+      "minimum_gap_m": -0.010701236341300418,
+      "onset_gap_m": null,
+      "onset_interval": null,
+      "recovery_duty": 0.0,
+      "recovery_min_gap_m": 0.06439997196181785,
+      "release_interval": null,
+      "steady_hold_mean_gap_m": -0.010701236341300418
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "initial_gap_min_m",
+      "criterion": ">= 0.05 in every run",
+      "observed": 0.06439997196181785,
+      "passed": true,
+      "stage": "admission"
+    },
+    {
+      "check_id": "recovery_gap_min_m",
+      "criterion": ">= 0.05 in every run",
+      "observed": 0.06438678731888897,
+      "passed": true,
+      "stage": "admission"
+    },
+    {
+      "check_id": "sham_hold_mean_gap_max_m",
+      "criterion": "<= -0.005 in every sham run",
+      "observed": -0.009811847623301494,
+      "passed": true,
+      "stage": "admission"
+    },
+    {
+      "check_id": "condition_signal_semantics",
+      "criterion": "sham and recovery stay inactive",
+      "observed": {
+        "recovery_inactive": true,
+        "sham_never_active": true
+      },
+      "passed": true,
+      "stage": "admission"
+    },
+    {
+      "check_id": "joint_or_effect_max_abs_rad",
+      "criterion": "<= 1e-09",
+      "observed": 0.0,
+      "passed": true,
+      "stage": "repeatability"
+    },
+    {
+      "check_id": "probe_gap_or_blocked_max_abs_m",
+      "criterion": "<= 1e-09",
+      "observed": 0.0,
+      "passed": true,
+      "stage": "repeatability"
+    },
+    {
+      "check_id": "orientation_or_effect_max_abs_rad",
+      "criterion": "<= 1e-09",
+      "observed": 0.0,
+      "passed": true,
+      "stage": "repeatability"
+    },
+    {
+      "check_id": "pair_active_exact",
+      "criterion": "must be exactly true for complete N+1 bitsets",
+      "observed": true,
+      "passed": true,
+      "stage": "repeatability"
+    },
+    {
+      "check_id": "event_interval_exact",
+      "criterion": "must be exactly true",
+      "observed": true,
+      "passed": true,
+      "stage": "repeatability"
+    },
+    {
+      "check_id": "joint_or_effect_max_abs_rad",
+      "criterion": "<= 0.01",
+      "observed": 0.0012479424476623535,
+      "passed": true,
+      "stage": "dt_halving"
+    },
+    {
+      "check_id": "probe_gap_or_blocked_max_abs_m",
+      "criterion": "<= 0.001",
+      "observed": 1.1175583435552028e-05,
+      "passed": true,
+      "stage": "dt_halving"
+    },
+    {
+      "check_id": "orientation_or_effect_max_abs_rad",
+      "criterion": "<= 0.02",
+      "observed": 0.0005679039167269905,
+      "passed": true,
+      "stage": "dt_halving"
+    },
+    {
+      "check_id": "hold_duty_max_abs",
+      "criterion": "<= 0.01",
+      "observed": 0.0,
+      "passed": true,
+      "stage": "dt_halving"
+    },
+    {
+      "check_id": "event_midpoint_max_abs_s",
+      "criterion": "<= 0.004 and must be available",
+      "observed": 0.005499999999999616,
+      "passed": false,
+      "stage": "dt_halving"
+    }
+  ],
+  "claim_boundary": {
+    "dual_hand_interaction_in_scope": false,
+    "floating_base_in_scope": false,
+    "full_isaac_sim_in_scope": false,
+    "hardware_in_scope": false,
+    "native_hand_collision_geometry_validated": false,
+    "raw_pair_force_cross_simulator_compared": false,
+    "sim2real_claimed": false,
+    "synthetic_fixture_only": true
+  },
+  "evidence_status": "VALID",
+  "existing_gate0": {
+    "pass_ready": false,
+    "trajectory_t1_science_status": "DIVERGENT",
+    "unchanged_by_contact_c0": true
+  },
+  "gate_id": "contacts-c0",
+  "interpretation": "DIVERGENT is a thresholded observation under the pinned synthetic simulation protocol, not a hardware, safety, Sim2Real, or vendor-bug claim.",
+  "invalid_reasons": [],
+  "manifest_id": "wavesimparity-contact-c0",
+  "manifest_sha256": "cb02398665dbed5722b6f9c44fca1c25a78ed495eb63cf5008e875672ceb930e",
+  "mapping": {
+    "complete": true,
+    "distal_frame_mapping": "10/10",
+    "joint_mapping": "44/44"
+  },
+  "pass_ready": false,
+  "run_summary": {
+    "completed_run_count": 32,
+    "expected_run_count": 32,
+    "received_run_count": 32
+  },
+  "schema_version": 1,
+  "science_status": "INCONCLUSIVE",
+  "scientific_reasons": [
+    "admission_repeatability_or_dt_failed"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "upstream_commit": "6eea427eb24189519f32b9f21674cd534d3f973c",
+  "asset_tree_sha256": "9c2d71aec9f8fe77aeb03660f735eb55bc53b93ba595f6cbfe5cc4e8fbb67de4",
+  "issues": [
+    {
+      "id": "upstream-pr-1-dual-meshdir-static",
+      "codes": ["MESH_REFERENCE_MISSING"],
+      "path_globs": [
+        "dual_sharpa_wave/dual_sharpa_wave.xml",
+        "dual_sharpa_wave/dual_sharpa_wave_with_flange.xml",
+        "dual_sharpa_wave/dual_sharpa_wave_with_wrist.xml"
+      ],
+      "message_contains": ["left_sharpa_wave/meshes/", "right_sharpa_wave/meshes/"],
+      "all_references_match": [
+        "left_sharpa_wave/meshes/*",
+        "right_sharpa_wave/meshes/*"
+      ],
+      "expected_reference_counts": {
+        "dual_sharpa_wave/dual_sharpa_wave.xml": 43,
+        "dual_sharpa_wave/dual_sharpa_wave_with_flange.xml": 49,
+        "dual_sharpa_wave/dual_sharpa_wave_with_wrist.xml": 47
+      },
+      "reference_set_sha256": {
+        "dual_sharpa_wave/dual_sharpa_wave.xml": "741d07e3eb608781cd0d6dd26e8c2d68f5be5006881082c6faa1e898b8c6fa56",
+        "dual_sharpa_wave/dual_sharpa_wave_with_flange.xml": "79714f90cd06b8044d42e7c5bf87bee0669c6654af3ba762fcb6d9dc7104a9e5",
+        "dual_sharpa_wave/dual_sharpa_wave_with_wrist.xml": "b478815a44e7df54112a5d4ad3cd08e587879a2a4b0591c44261acd82faa1388"
+      },
+      "reference": "https://github.com/sharpa-robotics/sharpa-urdf-usd-xml/pull/1",
+      "note": "Open upstream PR changes the three dual-hand MuJoCo meshdir values. The validator matches the complete expected missing-reference set without modifying upstream assets."
+    },
+    {
+      "id": "upstream-pr-1-dual-meshdir-load",
+      "codes": ["MUJOCO_LOAD_FAILED"],
+      "path_globs": [
+        "dual_sharpa_wave/dual_sharpa_wave.xml",
+        "dual_sharpa_wave/dual_sharpa_wave_with_flange.xml",
+        "dual_sharpa_wave/dual_sharpa_wave_with_wrist.xml"
+      ],
+      "message_contains": ["left_sharpa_wave/meshes/", "right_sharpa_wave/meshes/"],
+      "reference": "https://github.com/sharpa-robotics/sharpa-urdf-usd-xml/pull/1",
+      "note": "The load error is classified only for the pinned asset revision or an exact asset-tree hash."
+    }
+  ]
+}

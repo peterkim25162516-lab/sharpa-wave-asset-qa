@@ -1,0 +1,266 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wave-asset-qa.local/schemas/contact-c0-run.schema.json",
+  "title": "WaveSimParity Contact Gate C0 per-case run",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "manifest_id", "manifest_sha256", "case", "execution", "mapping", "fixture_readback", "contact_observation", "samples", "provenance"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "manifest_id": { "const": "wavesimparity-contact-c0" },
+    "manifest_sha256": { "$ref": "#/$defs/sha256" },
+    "case": { "$ref": "#/$defs/case" },
+    "execution": { "$ref": "#/$defs/execution" },
+    "mapping": { "$ref": "#/$defs/mapping" },
+    "fixture_readback": { "$ref": "#/$defs/fixtureReadback" },
+    "contact_observation": { "$ref": "#/$defs/contactObservation" },
+    "samples": { "type": "array", "items": { "$ref": "#/$defs/sample" } },
+    "provenance": { "$ref": "#/$defs/provenance" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "execution": {
+            "properties": { "status": { "const": "completed" } },
+            "required": ["status"]
+          }
+        },
+        "required": ["execution"]
+      },
+      "then": {
+        "properties": {
+          "mapping": {
+            "properties": {
+              "observed_joint_count": { "const": 22 },
+              "observed_distal_frame_count": { "const": 5 },
+              "probe_frame_mapped": { "const": true }
+            }
+          },
+          "fixture_readback": {
+            "properties": {
+              "performed": { "const": true },
+              "profile_id": { "const": "synthetic_sphere_box_v1" },
+              "probe_parent_frame_name": { "type": "string", "pattern": "^(left|right)_index_DP$" },
+              "probe_local_center_m": { "const": [0.025, 0.0, 0.0] },
+              "probe_radius_m": { "const": 0.005 },
+              "target_world_center_m": { "const": [0.0, 0.0, 0.120] },
+              "target_half_extents_m": { "const": [0.150, 0.150, 0.010] },
+              "target_top_surface_z_m": { "const": 0.130 },
+              "static_friction": { "const": 0.0 },
+              "dynamic_friction": { "const": 0.0 },
+              "restitution": { "const": 0.0 },
+              "native_hand_collisions_enabled": { "const": false },
+              "self_collisions_enabled": { "const": false },
+              "ccd_enabled": { "const": false },
+              "allowed_pair_id": { "const": "synthetic_index_probe__static_box" },
+              "mujoco_condim": { "const": 1 },
+              "native_collision_prim_count": { "type": "integer", "minimum": 1 },
+              "native_collision_disabled_count": { "type": "integer", "minimum": 1 },
+              "enabled_collision_shape_count": { "const": 2 },
+              "collision_inventory_sha256": { "$ref": "#/$defs/sha256" },
+              "mass_properties_preserved": { "const": true }
+            }
+          },
+          "contact_observation": {
+            "properties": {
+              "performed": { "const": true },
+              "capability": { "const": "direct_filtered_pair_force_threshold" },
+              "selected_pair_id": { "const": "synthetic_index_probe__static_box" },
+              "pair_active_source": { "const": "direct_filtered_selected_pair_force_norm_n" },
+              "pair_active_force_threshold_n": { "const": 0.0001 },
+              "missing_pair_active_count": { "const": 0 },
+              "filtered_sensor_body_count": { "const": 1 },
+              "filtered_target_count": { "const": 1 }
+            }
+          },
+          "samples": { "minItems": 3501 }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "execution": { "properties": { "status": { "const": "completed" } }, "required": ["status"] },
+          "case": { "properties": { "timestep_variant": { "const": "base" } }, "required": ["timestep_variant"] }
+        },
+        "required": ["execution", "case"]
+      },
+      "then": {
+        "properties": {
+          "execution": { "properties": { "requested_steps": { "const": 3500 }, "completed_steps": { "const": 3500 } } },
+          "contact_observation": { "properties": { "pair_active_record_count": { "const": 3501 } } },
+          "samples": { "minItems": 3501, "maxItems": 3501 }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "execution": { "properties": { "status": { "const": "completed" } }, "required": ["status"] },
+          "case": { "properties": { "timestep_variant": { "const": "halved" } }, "required": ["timestep_variant"] }
+        },
+        "required": ["execution", "case"]
+      },
+      "then": {
+        "properties": {
+          "execution": { "properties": { "requested_steps": { "const": 7000 }, "completed_steps": { "const": 7000 } } },
+          "contact_observation": { "properties": { "pair_active_record_count": { "const": 7001 } } },
+          "samples": { "minItems": 7001, "maxItems": 7001 }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "gitObject": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "nullableSha256": { "oneOf": [{ "$ref": "#/$defs/sha256" }, { "type": "null" }] },
+    "nullableGitObject": { "oneOf": [{ "$ref": "#/$defs/gitObject" }, { "type": "null" }] },
+    "vector3": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": { "type": "number" }
+    },
+    "nullableVector3": { "oneOf": [{ "$ref": "#/$defs/vector3" }, { "type": "null" }] },
+    "case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["case_id", "simulator", "hand", "scenario_id", "condition", "timestep_variant", "repeat_index", "dt_s", "model_path"],
+      "properties": {
+        "case_id": { "type": "string", "pattern": "^(mujoco|ovphysx)\\.(left|right)\\.press_hold_release\\.(contact|sham)\\.(base|halved)\\.r0[12]$" },
+        "simulator": { "enum": ["mujoco", "ovphysx"] },
+        "hand": { "enum": ["left", "right"] },
+        "scenario_id": { "const": "press_hold_release" },
+        "condition": { "enum": ["contact", "sham"] },
+        "timestep_variant": { "enum": ["base", "halved"] },
+        "repeat_index": { "enum": [1, 2] },
+        "dt_s": { "enum": [0.002, 0.001] },
+        "model_path": { "type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+\\.(xml|usda)$" }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "message", "requested_steps", "completed_steps"],
+      "properties": {
+        "status": { "enum": ["completed", "error"] },
+        "message": { "type": ["string", "null"] },
+        "requested_steps": { "enum": [3500, 7000] },
+        "completed_steps": { "type": "integer", "minimum": 0, "maximum": 7000 }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "error" } }, "required": ["status"] },
+          "then": { "properties": { "message": { "type": "string", "minLength": 1 } } }
+        }
+      ]
+    },
+    "mapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["expected_joint_count", "observed_joint_count", "expected_distal_frame_count", "observed_distal_frame_count", "probe_frame_name", "probe_frame_mapped"],
+      "properties": {
+        "expected_joint_count": { "const": 22 },
+        "observed_joint_count": { "type": "integer", "minimum": 0, "maximum": 22 },
+        "expected_distal_frame_count": { "const": 5 },
+        "observed_distal_frame_count": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "probe_frame_name": { "type": "string", "pattern": "^(left|right)_index_DP$" },
+        "probe_frame_mapped": { "type": "boolean" }
+      }
+    },
+    "fixtureReadback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["performed", "profile_id", "probe_parent_frame_name", "probe_local_center_m", "probe_radius_m", "target_world_center_m", "target_half_extents_m", "target_top_surface_z_m", "static_friction", "dynamic_friction", "restitution", "native_hand_collisions_enabled", "self_collisions_enabled", "ccd_enabled", "allowed_pair_id", "mujoco_condim", "native_collision_prim_count", "native_collision_disabled_count", "enabled_collision_shape_count", "collision_inventory_sha256", "mass_properties_preserved"],
+      "properties": {
+        "performed": { "type": "boolean" },
+        "profile_id": { "type": ["string", "null"] },
+        "probe_parent_frame_name": { "type": ["string", "null"] },
+        "probe_local_center_m": { "$ref": "#/$defs/nullableVector3" },
+        "probe_radius_m": { "type": ["number", "null"] },
+        "target_world_center_m": { "$ref": "#/$defs/nullableVector3" },
+        "target_half_extents_m": { "$ref": "#/$defs/nullableVector3" },
+        "target_top_surface_z_m": { "type": ["number", "null"] },
+        "static_friction": { "type": ["number", "null"] },
+        "dynamic_friction": { "type": ["number", "null"] },
+        "restitution": { "type": ["number", "null"] },
+        "native_hand_collisions_enabled": { "type": ["boolean", "null"] },
+        "self_collisions_enabled": { "type": ["boolean", "null"] },
+        "ccd_enabled": { "type": ["boolean", "null"] },
+        "allowed_pair_id": { "type": ["string", "null"] },
+        "mujoco_condim": { "type": ["integer", "null"] },
+        "native_collision_prim_count": { "type": ["integer", "null"], "minimum": 0 },
+        "native_collision_disabled_count": { "type": ["integer", "null"], "minimum": 0 },
+        "enabled_collision_shape_count": { "type": ["integer", "null"], "minimum": 0 },
+        "collision_inventory_sha256": { "$ref": "#/$defs/nullableSha256" },
+        "mass_properties_preserved": { "type": ["boolean", "null"] }
+      }
+    },
+    "contactObservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["performed", "capability", "selected_pair_id", "pair_active_source", "pair_active_force_threshold_n", "pair_active_record_count", "missing_pair_active_count", "filtered_sensor_body_count", "filtered_target_count"],
+      "properties": {
+        "performed": { "type": "boolean" },
+        "capability": { "enum": ["direct_filtered_pair_force_threshold", "unavailable"] },
+        "selected_pair_id": { "type": ["string", "null"] },
+        "pair_active_source": { "type": ["string", "null"] },
+        "pair_active_force_threshold_n": { "type": ["number", "null"] },
+        "pair_active_record_count": { "type": "integer", "minimum": 0 },
+        "missing_pair_active_count": { "type": "integer", "minimum": 0 },
+        "filtered_sensor_body_count": { "type": "integer", "minimum": 0 },
+        "filtered_target_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "sample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["step", "time_s", "joint_positions", "joint_velocities", "frame_poses", "position_targets", "probe_center_world_m", "signed_gap_m", "pair_active", "raw_contact_count", "native_contact_observation"],
+      "properties": {
+        "step": { "type": "integer", "minimum": 0, "maximum": 7000 },
+        "time_s": { "type": "number", "minimum": 0.0, "maximum": 7.0 },
+        "joint_positions": { "type": "object", "minProperties": 22, "maxProperties": 22, "additionalProperties": { "type": "number" } },
+        "joint_velocities": { "type": "object", "minProperties": 22, "maxProperties": 22, "additionalProperties": { "type": "number" } },
+        "frame_poses": {
+          "type": "object",
+          "minProperties": 5,
+          "maxProperties": 5,
+          "additionalProperties": { "type": "array", "minItems": 7, "maxItems": 7, "items": { "type": "number" } }
+        },
+        "position_targets": { "type": "object", "minProperties": 22, "maxProperties": 22, "additionalProperties": { "type": "number" } },
+        "probe_center_world_m": { "$ref": "#/$defs/vector3" },
+        "signed_gap_m": { "type": "number" },
+        "pair_active": { "type": "boolean" },
+        "raw_contact_count": { "type": ["integer", "null"], "minimum": 0 },
+        "native_contact_observation": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["selected_pair_force_norm_n"],
+              "properties": { "selected_pair_force_norm_n": { "type": "number", "minimum": 0.0 } }
+            }
+          ]
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["backend", "source_revision", "source_tree", "asset_commit", "asset_git_tree", "manifest_sha256", "fixture_overlay_sha256", "runtime_fingerprint_sha256", "fresh_process_identity_sha256"],
+      "properties": {
+        "backend": { "enum": ["mujoco", "ovphysx"] },
+        "source_revision": { "$ref": "#/$defs/nullableGitObject" },
+        "source_tree": { "$ref": "#/$defs/nullableGitObject" },
+        "asset_commit": { "$ref": "#/$defs/nullableGitObject" },
+        "asset_git_tree": { "$ref": "#/$defs/nullableGitObject" },
+        "manifest_sha256": { "$ref": "#/$defs/nullableSha256" },
+        "fixture_overlay_sha256": { "$ref": "#/$defs/nullableSha256" },
+        "runtime_fingerprint_sha256": { "$ref": "#/$defs/nullableSha256" },
+        "fresh_process_identity_sha256": { "$ref": "#/$defs/nullableSha256" }
+      }
+    }
+  }
+}

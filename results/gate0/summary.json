@@ -1,0 +1,377 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-08-27T05:27:01Z",
+  "status": {
+    "execution_status": "completed",
+    "comparison_status": "divergent",
+    "execution_complete": true,
+    "comparison_conclusive": true,
+    "pass_ready": false,
+    "note": "Only the left and right small_step frame-position metrics exceeded a frozen cross-simulator threshold."
+  },
+  "correction": {
+    "authoritative_run": true,
+    "supersedes_validator_commit": "4162fbb582635761dfa37df3c1c01beda1a1778d",
+    "reason": "The superseded control-corrected run sampled MuJoCo Cartesian body fields before refreshing them to the newly integrated qpos. The authoritative run calls mj_kinematics before frame sampling so joint and frame values describe the same current state.",
+    "prior_control_path_correction": {
+      "supersedes_validator_commit": "ef4b5fcacb90496130893969e0e3838b7d09de8c",
+      "reason": "That earlier run opened a nested converter USD layer and used an implicit drive. Source 4162fbb switched to the standard outer position-mode USDA entrypoints and an explicit IdealPD effort path."
+    },
+    "thresholds_changed": false
+  },
+  "source": {
+    "validator_commit": "c571d9bb37a619fe9e867447d3be448acc615e3c",
+    "validator_tree": "fe86e1ce279770db1a70ce74609166b282f151ff",
+    "source_archive_sha256": "7f1f8da89eec446541696544ef182202873bf2a699320da41cd6dd09aa42aecd",
+    "immutable_snapshot_sha256": "94f1ae53b50e020d0040628868ba8ea38458fa47aecf4a60240f7194935cc6a6",
+    "manifest_sha256": "576d8663a71692d6f5bd148ad719c9074ce0faceca6e4169bd8fcd14dc09899e"
+  },
+  "assets": {
+    "upstream_commit": "6eea427eb24189519f32b9f21674cd534d3f973c",
+    "git_tree": "bb00a9d5527b8a76de576ce876ebece67d8ffde1",
+    "canonical_lf_tree_sha256": "b198e39b1030f279bf531c01d7e2321339dccf4482e662e6e8c671c9499d54ad",
+    "entrypoints": {
+      "left": "wave_01/left_sharpa_wave/left_sharpa_wave.usda",
+      "right": "wave_01/right_sharpa_wave/right_sharpa_wave.usda"
+    }
+  },
+  "execution": {
+    "session_id": "formal-c571d9b-20260827-a1",
+    "remote_run_id": "formal-c571d9b-20260827-a1",
+    "expected_case_count": 32,
+    "received_case_count": 32,
+    "completed_case_count": 32,
+    "completion_fraction": 1.0,
+    "step_completion_fraction": 1.0,
+    "nonfinite_run_count": 0,
+    "all_structured_samples_finite": true,
+    "remote_elapsed_seconds": 240,
+    "remote_gpu": {
+      "name": "NVIDIA A800-SXM4-40GB",
+      "driver_version": "570.158.01",
+      "foreign_compute_process_observed": false
+    }
+  },
+  "mapping": {
+    "joint_count": 44,
+    "expected_joint_count": 44,
+    "distal_frame_count": 10,
+    "expected_distal_frame_count": 10,
+    "complete": true
+  },
+  "resolved_usd_schema": {
+    "left": "available",
+    "right": "available",
+    "formal_probe_count": 2,
+    "revolute_joint_count_per_hand": 22,
+    "angular_drive_count_per_hand": 22,
+    "distal_frame_count_per_hand": 5
+  },
+  "control_contract": {
+    "ovphysx_actuator_model": "IdealPDActuator",
+    "ovphysx_control_path": "explicit_pd_effort",
+    "controller_parameter_source": "ideal_pd_actuator_tensor",
+    "controller_parameter_canonical_json_sha256": "abf8458afbf16b2f4c2a31a18e0471c4f47e9903a3836b4d4838f6eb5ece10b4",
+    "backend_physx_drive_stiffness_and_damping_zero_verified": true,
+    "controller_stiffness_range_nm_per_rad": [
+      0.9041274189949036,
+      13.200947761535645
+    ],
+    "controller_damping_range_nm_s_per_rad": [
+      0.031512677669525146,
+      0.45163971185684204
+    ],
+    "authored_usd_to_runtime_max_abs_stiffness_error": 3.88484e-7,
+    "authored_usd_to_runtime_max_abs_damping_error": 1.63747e-8,
+    "ovphysx_to_mujoco_compiled_max_abs_stiffness_difference_nm_per_rad": 0.00756512,
+    "ovphysx_to_mujoco_compiled_max_abs_damping_difference_nm_s_per_rad": 0.0490232,
+    "position_target_readback_verified_case_count": 16,
+    "position_target_readback_maximum_error_rad": 0.0,
+    "effort_formula_maximum_error_nm": 0.0,
+    "effort_clip_validation_maximum_error_nm": 0.0,
+    "effort_clip_count": 0,
+    "maximum_computed_and_applied_effort_nm": 0.6600474119186401
+  },
+  "frame_sampling_contract": {
+    "mujoco_frame_pose_source": "mujoco_data_xpos_xquat_after_mj_kinematics",
+    "mujoco_frame_pose_state_alignment": "current_sample_qpos",
+    "provenance_verified_case_count": 16,
+    "independently_replayed_sample_count": 6016,
+    "independently_replayed_dp_pose_count": 30080,
+    "maximum_current_q_fk_position_error_m": 0.0,
+    "maximum_current_q_fk_quaternion_component_error": 0.0,
+    "frame_semantics": "DP/distal-phalanx link origin",
+    "physical_fingertip_contact_surface_claim": false
+  },
+  "repeatability": {
+    "status": "pass",
+    "joint_max_abs_rad": 0.0,
+    "frame_position_max_m": 0.0,
+    "frame_orientation_max_rad": 0.0
+  },
+  "dt_halving": {
+    "status": "pass",
+    "joint_max_abs_rad": 0.0013519460335373878,
+    "joint_threshold_rad": 0.01,
+    "frame_position_max_m": 0.0001617187350021004,
+    "frame_position_threshold_m": 0.001,
+    "frame_orientation_max_rad": 0.0028411708967059743,
+    "frame_orientation_threshold_rad": 0.02
+  },
+  "crosssim_thresholds": {
+    "joint_max_abs_rad": 0.02,
+    "frame_position_max_m": 0.002,
+    "frame_orientation_max_rad": 0.05
+  },
+  "scenario_comparison": {
+    "left": {
+      "zero_hold": {
+        "status": "within_tolerance",
+        "joint_max_abs_rad": 0.0,
+        "frame_position_max_m": 4.7506954471037115e-8,
+        "frame_orientation_max_rad": 1.2006506929688857e-6
+      },
+      "gravity_settling": {
+        "status": "within_tolerance",
+        "joint_max_abs_rad": 0.002770938494657884,
+        "frame_position_max_m": 0.00032797233851324944,
+        "frame_orientation_max_rad": 0.0038382275744258953
+      },
+      "small_step": {
+        "status": "divergent",
+        "joint_max_abs_rad": 0.018682925890761093,
+        "frame_position_max_m": 0.0021092433416852793,
+        "frame_orientation_max_rad": 0.045730512261423086,
+        "exceeded_metrics": [
+          "frame_position_max_m"
+        ],
+        "frame_position_excess_m": 0.00010924334168527926
+      }
+    },
+    "right": {
+      "zero_hold": {
+        "status": "within_tolerance",
+        "joint_max_abs_rad": 0.0,
+        "frame_position_max_m": 6.229738134102151e-8,
+        "frame_orientation_max_rad": 8.475436696777976e-7
+      },
+      "gravity_settling": {
+        "status": "within_tolerance",
+        "joint_max_abs_rad": 0.002725531139825394,
+        "frame_position_max_m": 0.00031991675421148705,
+        "frame_orientation_max_rad": 0.003698072655455308
+      },
+      "small_step": {
+        "status": "divergent",
+        "joint_max_abs_rad": 0.01870216279292725,
+        "frame_position_max_m": 0.002111194476300694,
+        "frame_orientation_max_rad": 0.0458414338169819,
+        "exceeded_metrics": [
+          "frame_position_max_m"
+        ],
+        "frame_position_excess_m": 0.00011119447630069386
+      }
+    }
+  },
+  "residual_diagnosis": {
+    "peak_frame": "thumb_DP",
+    "peak_time_s": 0.222,
+    "left_frame_position_excess_mm": 0.10924334168527926,
+    "right_frame_position_excess_mm": 0.11119447630069386,
+    "frictionloss_over_kp_vs_joint_delta_pearson": {
+      "left": 0.95568,
+      "right": 0.95555
+    },
+    "working_hypothesis": "MuJoCo absolute dry-friction effort and the legacy PhysX joint-friction coefficient do not have equivalent realized semantics.",
+    "verified_backend_bug": false,
+    "local_friction_scan": {
+      "classification": "diagnostic_only_not_formal_gate0",
+      "scientific_status": "supports_local_hypothesis",
+      "scope": "left small_step base r01 only",
+      "diagnostic_source_revision": "e238b29934f2e341703ba1aa7decdab7cae53688",
+      "diagnostic_bundle_root_sha256": "0804626ef0b7009a1e6c223284c210550e568593852046bc9b2b31d5bf3e4803",
+      "formal_mujoco_scale_1_drift": {
+        "joint_max_abs_rad": 0.0,
+        "frame_position_max_m": 0.0,
+        "frame_orientation_max_rad": 0.0
+      },
+      "scales": [
+        1.0,
+        0.5,
+        0.0
+      ],
+      "scale_0_metrics_vs_formal_ovphysx": {
+        "joint_max_abs_rad": 0.00908693500546992,
+        "frame_position_max_m": 0.0008506666265246331,
+        "frame_orientation_max_rad": 0.011040490947618999
+      },
+      "scale_1_to_0_reduction_fraction": {
+        "joint_max_abs_rad": 0.5136235588257883,
+        "frame_position_max_m": 0.5966958341350255,
+        "frame_orientation_max_rad": 0.7585749557209216
+      },
+      "formal_peak_reduction_fraction": {
+        "left_thumb_CMC_FE": 0.994890816908045,
+        "left_thumb_DP_position": 0.9561166187993194
+      },
+      "formal_gate0_result_changed": false
+    },
+    "local_total_viscous_retuning": {
+      "classification": "diagnostic_only_not_formal_gate0",
+      "scientific_status": "mixed_or_inconclusive",
+      "scope": "left small_step base r01 under zero MuJoCo dry friction only",
+      "diagnostic_source_revision": "85ca5680eec5be9197af0f2437e6eb913d0262a8",
+      "diagnostic_source_tree": "dba00025c35014257880bf18c4e751bf949c4c29",
+      "diagnostic_bundle_root_sha256": "a27826a0909afbf550f2bda198d7c7aab564e019a06a40aa63e829de92c0018c",
+      "diagnostic_bundle_manifest_sha256": "2022d931615b678f8669c5847efe292dec18c08b6945c1476b034b49390bda81",
+      "diagnostic_bundle_inventory": {
+        "file_count": 39,
+        "total_size_bytes": 5750736,
+        "exact": true
+      },
+      "preregistration_sha256": "5acff5d5ce9b34a133032830e62cc831f5c583087c5e18e244367edd8464d5ba",
+      "new_run_sha256": {
+        "same_source_control": "60004cd34f368019453e2b2c5f012b359f6d5bef47679823347673d4688b7e60",
+        "retuned_treatment": "4a0413bcdf93d6e8304dc0b0a91afdf5548696c4eaefa943e7c5a8efb3766d56"
+      },
+      "same_source_control_exact": true,
+      "registered_metric_values": {
+        "control_left_pinky_CMC_window_rad": 0.00908693500546992,
+        "treatment_left_pinky_CMC_window_rad": 0.0016027112970278673,
+        "control_left_thumb_DP_position_window_m": 0.0008506666265246331,
+        "treatment_left_thumb_DP_position_window_m": 0.0008147493852929242
+      },
+      "registered_reduction_fraction": {
+        "left_pinky_CMC_window": 0.8236246549509699,
+        "left_thumb_DP_position_window": 0.042222464255412755
+      },
+      "secondary_treatment_minus_control_over_control": {
+        "global_joint_max": -0.14527204588137002,
+        "global_frame_position_max": -0.04222246425541275,
+        "global_frame_orientation_max": 0.10612031024712808,
+        "joint_rmse": -0.12417844310448624,
+        "frame_position_rms": 0.08614134688337732
+      },
+      "formal_gate0_result_changed": false
+    },
+    "common_mujoco_fk_attribution": {
+      "classification": "post_hoc_mechanistic_analysis_not_formal_gate0",
+      "scientific_status": "kinematically_consistent_with_recorded_joint_state_gap_under_common_mujoco_fk",
+      "scope": "left small_step base r01, left_thumb_DP position, steps 55-85 only",
+      "analysis_source_revision": "cb76e54ecfa3e321020d3a52bce6684937283a24",
+      "analysis_source_tree": "6745c64c8e202e9800b5afd056de2220879f3412",
+      "analysis_plan_sha256": "da63d86f48f9b40e7bfff034582f62c96d3787400ef46184a50fe90a429b30e2",
+      "diagnostic_bundle_root_sha256": "d2fbad78e704f7cc673e2ab751473ebe625c86e52b5a6082854b98e1112a1624",
+      "diagnostic_bundle_manifest_sha256": "0695f52847e044f81ea1210d3ea61edaf6f1b9513fd3f7fb4f8eadd7ef622721",
+      "diagnostic_bundle_inventory": {
+        "file_count": 30,
+        "total_size_bytes": 6622792,
+        "exact": true
+      },
+      "method": {
+        "common_fk_backend": "mujoco",
+        "canonical_joint_count": 22,
+        "window_sample_count": 31,
+        "thumb_player_count": 5,
+        "coalition_count_per_sample": 32,
+        "dynamics_advanced": false,
+        "fit_performed": false,
+        "post_hoc_after_disclosed_single_step_feasibility_probe": true
+      },
+      "coordinate_audit": {
+        "t0_all_fingertips_position_error_max_m": 4.750695447103711e-08,
+        "t0_all_fingertips_orientation_error_max_rad": 1.2006506929688857e-06,
+        "passed": true
+      },
+      "candidate_results": {
+        "same_source_control": {
+          "rho_window": 5.274262088376781e-05,
+          "rho_peak": 3.891789383501432e-05,
+          "status": "CLOSES",
+          "raw_peak_position_gap_m": 0.0008506666265246331,
+          "residual_at_raw_peak_m": 3.3106153460075446e-08,
+          "ranked_signed_energy_fraction": {
+            "left_thumb_CMC_AA": 0.6662384903645624,
+            "left_thumb_CMC_FE": 0.24059759965915306,
+            "left_thumb_MCP_FE": 0.09602359887135442,
+            "left_thumb_IP": 0.0,
+            "left_thumb_MCP_AA": -0.0028596916768538396
+          },
+          "registered_dominant_positive_closer": "left_thumb_CMC_AA"
+        },
+        "total_viscous_treatment": {
+          "rho_window": 5.272850151503652e-05,
+          "rho_peak": 4.0633542114515254e-05,
+          "status": "CLOSES",
+          "raw_peak_position_gap_m": 0.0008147493852929241,
+          "residual_at_raw_peak_m": 3.3106153460075446e-08,
+          "ranked_signed_energy_fraction": {
+            "left_thumb_CMC_FE": 0.5077854270279207,
+            "left_thumb_CMC_AA": 0.34774576259053536,
+            "left_thumb_MCP_FE": 0.17535753047588473,
+            "left_thumb_IP": 0.0,
+            "left_thumb_MCP_AA": -0.03088872287463575
+          },
+          "registered_dominant_positive_closer": null
+        }
+      },
+      "formal_gate0_result_changed": false,
+      "causal_or_backend_bug_claim_supported": false
+    },
+    "next_minimal_experiment": "Read back effective OVPhysX friction, armature, and solver settings, then test the corresponding bounded hypothesis on both hands before any broader dynamics claim."
+  },
+  "ovphysx_runtime_log_observations": {
+    "case_count": 16,
+    "worker_stderr_file_count": 16,
+    "worker_stderr_total_bytes": 223171,
+    "cooking_registry_message_count": 16,
+    "material_binding_api_warning_line_count": 448,
+    "resolver_status_line_count": 304,
+    "worker_stdout_total_bytes": 57368,
+    "worker_stdout_warning_line_count": 480,
+    "missing_omni_physx_plugin_message_count": 16,
+    "ujitso_cooking_service_message_count": 16,
+    "unload_call_stack_block_count": 16,
+    "python_traceback_count": 0,
+    "explicit_cuda_error_count": 0,
+    "out_of_memory_message_count": 0
+  },
+  "contacts": {
+    "validated": false,
+    "ovphysx_contact_check_performed_case_count": 0,
+    "ovphysx_case_count": 16
+  },
+  "bundle": {
+    "verified": true,
+    "file_count": 358,
+    "total_size_bytes": 84635733,
+    "root_sha256": "d2e028d884f5484f7a7d5ecc0506201ff751c0847ed87b7a63d3a3b8cd056505",
+    "unlisted_payload_count": 0,
+    "local_relative_path": "results/gate0-bundle-c571d9b-20260827-a1"
+  },
+  "scope": {
+    "backend_pair": [
+      "mujoco",
+      "kit-less ovphysx"
+    ],
+    "fixed_base": true,
+    "position_control": true,
+    "full_isaac_sim": false,
+    "kit": false,
+    "renderer": false,
+    "camera": false,
+    "rtx_workload": false,
+    "contacts_validated": false,
+    "hardware_validation": false,
+    "sim2real_claim": false
+  },
+  "publication": {
+    "compact_artifacts": [
+      "results/gate0/report.md",
+      "results/gate0/summary.json"
+    ],
+    "raw_bundle_publication_ready": false,
+    "raw_bundle_disposition": "private audit evidence",
+    "reason": "Raw logs retain host-specific paths, a user name, GPU UUID, and worker PIDs. A public raw bundle requires redaction and a new root hash."
+  }
+}

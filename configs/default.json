@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "expected_active_joints_per_hand": 22,
+  "axis_norm_tolerance": 1e-06,
+  "joint_limit_tolerance_rad": 0.0002,
+  "fk_position_warning_mm": 0.5,
+  "fk_orientation_warning_deg": 0.1,
+  "required_fingers": ["thumb", "index", "middle", "ring", "pinky"],
+  "required_formats": ["urdf", "mjcf", "usda"],
+  "strict_warnings": false
+}

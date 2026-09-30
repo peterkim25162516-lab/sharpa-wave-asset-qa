@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "isaaclab_commit": "ffff603eafc6b74264a5261cc0183d6a65390d78",
+  "python_version": "3.12.14",
+  "ovphysx_version": "0.4.13",
+  "locked_install": {
+    "uv_lock_sha256": "cc77b3f9862bd561224aef0cf56084f329a0c722af71e5b5851bd23541813522",
+    "usd_core_version": "25.11",
+    "usd_exchange_version": "3.0.0"
+  },
+  "runtime_overlay": {
+    "remove": ["usd-exchange==3.0.0"],
+    "reinstall": ["usd-core==25.11"]
+  },
+  "reason": "The pinned Linux x86_64 dependency set installs overlapping, ABI-incompatible pxr modules from usd-core and usd-exchange. The original lock is preserved; this narrow overlay restores a single OpenUSD provider for the kit-less probe.",
+  "upstream_reference": "https://github.com/isaac-sim/IsaacLab/issues/5025"
+}

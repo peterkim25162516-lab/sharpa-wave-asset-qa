@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "repository": "https://github.com/sharpa-robotics/sharpa-urdf-usd-xml.git",
+  "commit": "6eea427eb24189519f32b9f21674cd534d3f973c",
+  "asset_tree_sha256": "9c2d71aec9f8fe77aeb03660f735eb55bc53b93ba595f6cbfe5cc4e8fbb67de4",
+  "verified_on": "2026-08-26",
+  "asset_root": "wave_01",
+  "license": "Apache-2.0",
+  "sparse_paths": [
+    "wave_01/left_sharpa_wave",
+    "wave_01/right_sharpa_wave",
+    "wave_01/dual_sharpa_wave",
+    "wave_01/sharpa_wave_float_base_urdf_usd"
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "manifest_id": "wavesimparity-contact-c0",
+  "provenance": {
+    "repository": "https://github.com/sharpa-robotics/sharpa-urdf-usd-xml.git",
+    "commit": "6eea427eb24189519f32b9f21674cd534d3f973c",
+    "asset_git_tree": "bb00a9d5527b8a76de576ce876ebece67d8ffde1",
+    "canonical_lf_asset_tree_sha256": "b198e39b1030f279bf531c01d7e2321339dccf4482e662e6e8c671c9499d54ad",
+    "asset_root": "wave_01"
+  },
+  "simulators": ["mujoco", "ovphysx"],
+  "hands": [
+    {
+      "side": "left",
+      "model_name": "left_sharpa_wave",
+      "mounting": "fixed_base",
+      "control_mode": "position",
+      "model_paths": {
+        "mujoco": "wave_01/left_sharpa_wave/left_sharpa_wave.xml",
+        "ovphysx": "wave_01/left_sharpa_wave/left_sharpa_wave.usda"
+      },
+      "joint_names": [
+        "left_thumb_CMC_FE",
+        "left_thumb_CMC_AA",
+        "left_thumb_MCP_FE",
+        "left_thumb_MCP_AA",
+        "left_thumb_IP",
+        "left_index_MCP_FE",
+        "left_index_MCP_AA",
+        "left_index_PIP",
+        "left_index_DIP",
+        "left_middle_MCP_FE",
+        "left_middle_MCP_AA",
+        "left_middle_PIP",
+        "left_middle_DIP",
+        "left_ring_MCP_FE",
+        "left_ring_MCP_AA",
+        "left_ring_PIP",
+        "left_ring_DIP",
+        "left_pinky_CMC",
+        "left_pinky_MCP_FE",
+        "left_pinky_MCP_AA",
+        "left_pinky_PIP",
+        "left_pinky_DIP"
+      ],
+      "distal_frame_names": [
+        "left_index_DP",
+        "left_middle_DP",
+        "left_pinky_DP",
+        "left_ring_DP",
+        "left_thumb_DP"
+      ]
+    },
+    {
+      "side": "right",
+      "model_name": "right_sharpa_wave",
+      "mounting": "fixed_base",
+      "control_mode": "position",
+      "model_paths": {
+        "mujoco": "wave_01/right_sharpa_wave/right_sharpa_wave.xml",
+        "ovphysx": "wave_01/right_sharpa_wave/right_sharpa_wave.usda"
+      },
+      "joint_names": [
+        "right_thumb_CMC_FE",
+        "right_thumb_CMC_AA",
+        "right_thumb_MCP_FE",
+        "right_thumb_MCP_AA",
+        "right_thumb_IP",
+        "right_index_MCP_FE",
+        "right_index_MCP_AA",
+        "right_index_PIP",
+        "right_index_DIP",
+        "right_middle_MCP_FE",
+        "right_middle_MCP_AA",
+        "right_middle_PIP",
+        "right_middle_DIP",
+        "right_ring_MCP_FE",
+        "right_ring_MCP_AA",
+        "right_ring_PIP",
+        "right_ring_DIP",
+        "right_pinky_CMC",
+        "right_pinky_MCP_FE",
+        "right_pinky_MCP_AA",
+        "right_pinky_PIP",
+        "right_pinky_DIP"
+      ],
+      "distal_frame_names": [
+        "right_index_DP",
+        "right_middle_DP",
+        "right_pinky_DP",
+        "right_ring_DP",
+        "right_thumb_DP"
+      ]
+    }
+  ],
+  "fixture": {
+    "profile_id": "synthetic_sphere_box_v1",
+    "probe": {
+      "kind": "sphere",
+      "parent_frame_suffix": "index_DP",
+      "local_center_m": [0.025, 0.0, 0.0],
+      "radius_m": 0.005,
+      "preserve_mass_properties": true
+    },
+    "target": {
+      "kind": "static_box",
+      "world_center_m": [0.0, 0.0, 0.120],
+      "half_extents_m": [0.150, 0.150, 0.010],
+      "top_surface_z_m": 0.130
+    },
+    "material": {
+      "static_friction": 0.0,
+      "dynamic_friction": 0.0,
+      "restitution": 0.0
+    },
+    "collision_policy": {
+      "native_hand_collisions_enabled": false,
+      "self_collisions_enabled": false,
+      "ccd_enabled": false,
+      "allowed_pair_id": "synthetic_index_probe__static_box",
+      "mujoco_condim": 1,
+      "pair_active_source": "direct_filtered_selected_pair_force_norm_n",
+      "pair_active_force_threshold_n": 0.0001,
+      "pair_active_threshold_freeze_basis": "excluded_engineering_pilot_before_formal_source_freeze",
+      "excluded_pilot_scientific_evidence": false,
+      "raw_pair_force_cross_simulator_comparable": false,
+      "expected_enabled_collision_shape_count": 2,
+      "expected_filtered_sensor_body_count": 1,
+      "expected_filtered_target_count": 1
+    }
+  },
+  "scenario": {
+    "scenario_id": "press_hold_release",
+    "kind": "smooth_press_hold_release",
+    "duration_s": 7.0,
+    "dt_s": 0.002,
+    "gravity_m_s2": [0.0, 0.0, 0.0],
+    "initial_position_rad": 0.0,
+    "driven_joint_targets_rad": {
+      "index_MCP_FE": 0.60,
+      "index_MCP_AA": 0.0,
+      "index_PIP": 0.90,
+      "index_DIP": 0.60
+    },
+    "schedule": {
+      "settle_end_s": 0.5,
+      "press_end_s": 3.0,
+      "hold_end_s": 4.0,
+      "retract_end_s": 6.5,
+      "recovery_end_s": 7.0
+    },
+    "smoothstep_profile": "quintic_10u3_minus_15u4_plus_6u5"
+  },
+  "conditions": [
+    {
+      "condition_id": "contact",
+      "pair_collision_enabled": true
+    },
+    {
+      "condition_id": "sham",
+      "pair_collision_enabled": false
+    }
+  ],
+  "run_policy": {
+    "repeat_count": 2,
+    "dt_halving_scenario_ids": ["press_hold_release"],
+    "debounce_window_s": 0.004,
+    "minimum_completion_fraction": 1.0,
+    "fresh_process_per_case": true
+  },
+  "thresholds": {
+    "admission": {
+      "fixture_geometry_max_abs_error_m": 0.000001,
+      "material_zero_max_abs_error": 0.000000001,
+      "initial_gap_min_m": 0.050,
+      "sham_hold_mean_gap_max_m": -0.005,
+      "recovery_gap_min_m": 0.050,
+      "contact_hold_duty_min": 0.95
+    },
+    "repeatability": {
+      "joint_or_effect_max_abs_rad": 0.000000001,
+      "probe_gap_or_blocked_max_abs_m": 0.000000001,
+      "orientation_or_effect_max_abs_rad": 0.000000001,
+      "pair_active_exact": true,
+      "event_interval_exact": true
+    },
+    "dt_halving": {
+      "joint_or_effect_max_abs_rad": 0.01,
+      "probe_gap_or_blocked_max_abs_m": 0.001,
+      "orientation_or_effect_max_abs_rad": 0.02,
+      "event_midpoint_max_abs_s": 0.004,
+      "hold_duty_max_abs": 0.01
+    },
+    "cross_simulator": {
+      "event_midpoint_max_abs_s": 0.010,
+      "hold_duty_max_abs": 0.02,
+      "onset_gap_max_abs_m": 0.001,
+      "steady_hold_mean_gap_max_abs_m": 0.001,
+      "joint_effect_max_abs_rad": 0.02,
+      "blocked_travel_max_abs_m": 0.002,
+      "orientation_effect_max_abs_rad": 0.05
+    }
+  },
+  "claim_boundary": {
+    "synthetic_fixture_only": true,
+    "native_fingertip_geometry_validated": false,
+    "full_isaac_sim": false,
+    "dual_hand": false,
+    "floating_base": false,
+    "hardware": false,
+    "sim2real": false
+  }
+}

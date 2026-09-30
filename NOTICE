@@ -1,0 +1,14 @@
+Sharpa Wave Asset QA
+Copyright 2026 Qiyan Jin
+
+This product is an independent, unofficial validation tool. It is not endorsed by
+or affiliated with Sharpa Robotics.
+
+The tool does not bundle Sharpa robot assets. Example runs use the public
+"Sharpa Robotic Models for Simulation" repository at a pinned revision:
+https://github.com/sharpa-robotics/sharpa-urdf-usd-xml
+
+That upstream repository is distributed under Apache License 2.0 and includes
+its own LICENSE.txt and NOTICE.txt. Preserve those files whenever upstream
+assets are redistributed. Sharpa names and marks remain the property of their
+respective owners; Apache License 2.0 does not grant trademark permission.

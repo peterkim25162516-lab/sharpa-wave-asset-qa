@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wave-asset-qa.local/schemas/parity-result.schema.json",
+  "title": "WaveSimParity comparison result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "manifest_sha256",
+    "hand",
+    "scenario_id",
+    "executions",
+    "comparison"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "manifest_id": { "$ref": "#/$defs/identifier" },
+    "manifest_sha256": { "$ref": "#/$defs/sha256" },
+    "hand": { "enum": ["left", "right"] },
+    "scenario_id": { "$ref": "#/$defs/identifier" },
+    "executions": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "allOf": [
+            { "$ref": "#/$defs/execution" },
+            { "properties": { "simulator": { "const": "mujoco" } } }
+          ]
+        },
+        {
+          "allOf": [
+            { "$ref": "#/$defs/execution" },
+            { "properties": { "simulator": { "const": "ovphysx" } } }
+          ]
+        }
+      ],
+      "items": false
+    },
+    "comparison": { "$ref": "#/$defs/comparison" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "executions": {
+            "contains": {
+              "properties": { "execution_status": { "const": "error" } },
+              "required": ["execution_status"]
+            }
+          }
+        },
+        "required": ["executions"]
+      },
+      "then": {
+        "properties": {
+          "comparison": {
+            "properties": { "comparison_status": { "const": "inconclusive" } },
+            "required": ["comparison_status"]
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_.-]*$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "simulator",
+        "execution_status",
+        "completed_repeats",
+        "requested_repeats",
+        "finite",
+        "bundle_root_sha256",
+        "message"
+      ],
+      "properties": {
+        "simulator": { "enum": ["mujoco", "ovphysx"] },
+        "execution_status": { "enum": ["completed", "error"] },
+        "completed_repeats": { "type": "integer", "minimum": 0 },
+        "requested_repeats": { "const": 2 },
+        "finite": { "type": "boolean" },
+        "bundle_root_sha256": {
+          "oneOf": [{ "$ref": "#/$defs/sha256" }, { "type": "null" }]
+        },
+        "message": { "type": ["string", "null"] }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "execution_status": { "const": "completed" } },
+            "required": ["execution_status"]
+          },
+          "then": {
+            "properties": {
+              "finite": { "const": true },
+              "completed_repeats": { "const": 2 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "execution_status": { "const": "error" } },
+            "required": ["execution_status"]
+          },
+          "then": { "properties": { "message": { "type": "string", "minLength": 1 } } }
+        }
+      ]
+    },
+    "comparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["comparison_status", "metrics", "message"],
+      "properties": {
+        "comparison_status": {
+          "enum": ["within_tolerance", "divergent", "inconclusive"],
+          "description": "Divergent means a pinned diagnostic threshold was exceeded; it is not by itself an upstream bug finding."
+        },
+        "metrics": {
+          "type": "object",
+          "propertyNames": { "$ref": "#/$defs/identifier" },
+          "additionalProperties": { "type": "number" }
+        },
+        "message": { "type": ["string", "null"] }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "comparison_status": { "const": "inconclusive" } },
+            "required": ["comparison_status"]
+          },
+          "then": { "properties": { "message": { "type": "string", "minLength": 1 } } }
+        }
+      ]
+    }
+  }
+}

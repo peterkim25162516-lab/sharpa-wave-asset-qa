@@ -1,0 +1,761 @@
+{
+  "claim_boundary": {
+    "allowed": "The readback is descriptive evidence of authored, resolved, and runtime-effective configuration exposed by the frozen OVPhysX stack without any user or experimental trace simulation.step call. Adapter initialization and reset zero-state or zero-target writes are disclosed, and any backend-internal GPU warmup or initialization advance is separately reported or explicitly unavailable.",
+    "forbidden": [
+      "causal explanation of an observed trajectory difference",
+      "parameter identification from motion",
+      "cross-engine parameter equivalence from names or numbers alone",
+      "measured or realized torque inference",
+      "backend or upstream bug claim",
+      "hardware or Sim2Real claim",
+      "formal Gate 0 status change"
+    ],
+    "formal_status_unchanged": "Gate 0 remains DIVERGENT and pass_ready=false until a separately frozen and executed protocol justifies any later update."
+  },
+  "classification": "descriptive_effective_parameter_readback_not_formal_gate0",
+  "coverage": {
+    "canonical_joint_count_per_hand": {
+      "left": 22,
+      "right": 22
+    },
+    "canonical_joint_count_total": 44,
+    "complete": true,
+    "covered_joint_count_total": 44
+  },
+  "execution_observed": {
+    "experimental_control_command_count": 0,
+    "experimental_target_write_count": 0,
+    "fresh_process_count": 4,
+    "gpu_warmup_disclosed_separately": true,
+    "initialization_state_write_performed_all_instances": true,
+    "instances_per_hand": {
+      "left": 2,
+      "right": 2
+    },
+    "internal_initialization_advance_not_inferred": true,
+    "trace_time_s": 0.0,
+    "trajectory_sample_count": 0,
+    "user_or_experimental_trace_simulation_step_call_count": 0
+  },
+  "experiment_id": "ovphysx-both-hands-effective-readback-freeze-a-v1",
+  "field_availability_matrix": {
+    "armature": {
+      "availability_counts": {
+        "available": 88,
+        "partially_available": 0,
+        "unavailable": 0
+      },
+      "present_layer_counts": {
+        "authored": 88,
+        "resolved": 88,
+        "runtime_effective": 88
+      },
+      "record_count": 88,
+      "source_locators": [
+        "composed-usd:/World/Env_0/Robot/joints/left_index_DIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_index_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_index_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_index_PIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_middle_DIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_middle_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_middle_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_middle_PIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_CMC.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_DIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_PIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_ring_DIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_ring_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_ring_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_ring_PIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_CMC_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_CMC_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_IP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_index_DIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_index_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_index_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_index_PIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_middle_DIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_middle_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_middle_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_middle_PIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_CMC.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_DIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_PIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_ring_DIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_ring_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_ring_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_ring_PIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_CMC_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_CMC_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_IP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding"
+      ]
+    },
+    "control_drive.backend_drive_damping": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 88,
+        "unavailable": 0
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 88
+      },
+      "record_count": 88,
+      "source_locators": [
+        "ovphysx.TensorDataType.DOF_DAMPING/root_view_cpu_numpy_binding"
+      ]
+    },
+    "control_drive.backend_drive_stiffness": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 88,
+        "unavailable": 0
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 88
+      },
+      "record_count": 88,
+      "source_locators": [
+        "ovphysx.TensorDataType.DOF_STIFFNESS/root_view_cpu_numpy_binding"
+      ]
+    },
+    "control_drive.controller_model": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 88,
+        "unavailable": 0
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 88
+      },
+      "record_count": 88,
+      "source_locators": [
+        "isaaclab.actuators.IdealPDActuator"
+      ]
+    },
+    "control_drive.effort_limit": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 88,
+        "unavailable": 0
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 88
+      },
+      "record_count": 88,
+      "source_locators": [
+        "IdealPDActuator.effort_limit_and_effort_limit_sim_torch"
+      ]
+    },
+    "control_drive.gear_or_transmission": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 0,
+        "unavailable": 88
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 0
+      },
+      "record_count": 88,
+      "source_locators": [
+        "pinned-isaaclab-ovphysx:ArticulationData"
+      ]
+    },
+    "control_drive.kd": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 88,
+        "unavailable": 0
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 88
+      },
+      "record_count": 88,
+      "source_locators": [
+        "IdealPDActuator.damping_torch"
+      ]
+    },
+    "control_drive.kp": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 88,
+        "unavailable": 0
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 88
+      },
+      "record_count": 88,
+      "source_locators": [
+        "IdealPDActuator.stiffness_torch"
+      ]
+    },
+    "control_drive.passive_joint_damping": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 0,
+        "unavailable": 88
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 0
+      },
+      "record_count": 88,
+      "source_locators": [
+        "pinned-isaaclab-ovphysx:ArticulationData"
+      ]
+    },
+    "control_drive.target_interpretation": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 88,
+        "unavailable": 0
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 88
+      },
+      "record_count": 88,
+      "source_locators": [
+        "OVPhysXAdapter.set_position_targets/IdealPDActuator.compute"
+      ]
+    },
+    "control_drive.velocity_limit": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 0,
+        "unavailable": 88
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 0
+      },
+      "record_count": 88,
+      "source_locators": [
+        "OVPhysXAdapter.backend_joint_dynamics.velocity_limit_readback"
+      ]
+    },
+    "friction": {
+      "availability_counts": {
+        "available": 88,
+        "partially_available": 0,
+        "unavailable": 0
+      },
+      "present_layer_counts": {
+        "authored": 88,
+        "resolved": 88,
+        "runtime_effective": 88
+      },
+      "record_count": 88,
+      "source_locators": [
+        "composed-usd:/World/Env_0/Robot/joints/left_index_DIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_index_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_index_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_index_PIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_middle_DIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_middle_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_middle_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_middle_PIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_CMC.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_DIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_PIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_ring_DIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_ring_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_ring_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_ring_PIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_CMC_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_CMC_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_IP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_index_DIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_index_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_index_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_index_PIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_middle_DIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_middle_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_middle_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_middle_PIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_CMC.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_DIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_PIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_ring_DIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_ring_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_ring_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_ring_PIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_CMC_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_CMC_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_IP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding"
+      ]
+    },
+    "solver_runtime.execution_pipeline": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 4,
+        "unavailable": 0
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 4
+      },
+      "record_count": 4,
+      "source_locators": [
+        "OVPhysXAdapter.device/runtime_api"
+      ]
+    },
+    "solver_runtime.integrator": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 0,
+        "unavailable": 4
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 0
+      },
+      "record_count": 4,
+      "source_locators": [
+        "isaaclab_ovphysx.physics.OvPhysxCfg"
+      ]
+    },
+    "solver_runtime.physics_dt_s": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 4,
+        "unavailable": 0
+      },
+      "present_layer_counts": {
+        "authored": 4,
+        "resolved": 4,
+        "runtime_effective": 0
+      },
+      "record_count": 4,
+      "source_locators": [
+        "OVPhysXAdapter.requested_dt/SimulationCfg.dt/SimulationContext.get_physics_dt_config_accessor"
+      ]
+    },
+    "solver_runtime.position_iterations": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 0,
+        "unavailable": 4
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 0
+      },
+      "record_count": 4,
+      "source_locators": [
+        "live-composed-usd-probe:/World/Env_0/Robot/root_joint#physxArticulation:solverPositionIterationCount | live-composed-usd-probe:/physicsScene#physxScene:minPositionIterationCount | live-composed-usd-probe:/physicsScene#physxScene:maxPositionIterationCount"
+      ]
+    },
+    "solver_runtime.sleep_threshold": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 0,
+        "unavailable": 4
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 0
+      },
+      "record_count": 4,
+      "source_locators": [
+        "live-composed-usd-probe:/World/Env_0/Robot/root_joint#physxArticulation:sleepThreshold"
+      ]
+    },
+    "solver_runtime.solver_type": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 0,
+        "unavailable": 4
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 0
+      },
+      "record_count": 4,
+      "source_locators": [
+        "live-composed-usd-probe:/physicsScene#physxScene:solverType"
+      ]
+    },
+    "solver_runtime.stabilization": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 0,
+        "unavailable": 4
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 0
+      },
+      "record_count": 4,
+      "source_locators": [
+        "live-composed-usd-probe:/physicsScene#physxScene:enableStabilization"
+      ]
+    },
+    "solver_runtime.substeps": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 0,
+        "unavailable": 4
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 0
+      },
+      "record_count": 4,
+      "source_locators": [
+        "OVPhysXAdapter.step/ovphysx.PhysX.step_sync"
+      ]
+    },
+    "solver_runtime.tolerances": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 0,
+        "unavailable": 4
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 0
+      },
+      "record_count": 4,
+      "source_locators": [
+        "live-composed-usd-probe:/World/Env_0/Robot/root_joint#physxArticulation:stabilizationThreshold | live-composed-usd-probe:/physicsScene#physxScene:timeStepsPerSecond"
+      ]
+    },
+    "solver_runtime.velocity_iterations": {
+      "availability_counts": {
+        "available": 0,
+        "partially_available": 0,
+        "unavailable": 4
+      },
+      "present_layer_counts": {
+        "authored": 0,
+        "resolved": 0,
+        "runtime_effective": 0
+      },
+      "record_count": 4,
+      "source_locators": [
+        "live-composed-usd-probe:/World/Env_0/Robot/root_joint#physxArticulation:solverVelocityIterationCount | live-composed-usd-probe:/physicsScene#physxScene:minVelocityIterationCount | live-composed-usd-probe:/physicsScene#physxScene:maxVelocityIterationCount"
+      ]
+    }
+  },
+  "formal_gate0": {
+    "formal_bundle_root_sha256": "d2e028d884f5484f7a7d5ecc0506201ff751c0847ed87b7a63d3a3b8cd056505",
+    "pass_ready": false,
+    "status": "DIVERGENT",
+    "unchanged_by_this_descriptive_readback": true
+  },
+  "freeze_b_required": true,
+  "instance_content_hashes": [
+    {
+      "canonical_vector_sha256": {
+        "armature_runtime_effective": "50b58676c19a7252cf0e138fd874e6d45d3d9188ac0c9709678e009368939919",
+        "backend_drive_damping_runtime_effective": "b67e336b7217efa8a42ceb8c0265a54e29d59e949b01efa723d0c05f4ab79fd3",
+        "backend_drive_stiffness_runtime_effective": "b67e336b7217efa8a42ceb8c0265a54e29d59e949b01efa723d0c05f4ab79fd3",
+        "effort_limit_runtime_effective": "d2945a6b62236047d48ecf69bafda4099c84df58b4c56609bf534ff23074d00c",
+        "friction_runtime_effective": "82734f17d601d7eb1e25ccab97a8797384ff6d3feee5c043d45fbc972006b4dc",
+        "gear_or_transmission_runtime_effective": "c890653b95fe8b638e9f1a0e4d03646d965e53323c03cc77442a6215121efbb4",
+        "kd_runtime_effective": "f97922838c9ed5cf392a7035b32e244860de7441bcf6f321e88b6bdb4a6e4d75",
+        "kp_runtime_effective": "b6b912b816a8ff8271d26b12e889c16359eafbd390781ac31dad78244929c78d",
+        "passive_joint_damping_runtime_effective": "c890653b95fe8b638e9f1a0e4d03646d965e53323c03cc77442a6215121efbb4",
+        "velocity_limit_runtime_effective": "c890653b95fe8b638e9f1a0e4d03646d965e53323c03cc77442a6215121efbb4"
+      },
+      "case_id": "ovphysx.left.effective_readback.r01",
+      "worker_payload_sha256": "df41b21346d39a1d81d33817b35766525c8438dc1b3898023f5410f7deaf940f"
+    },
+    {
+      "canonical_vector_sha256": {
+        "armature_runtime_effective": "50b58676c19a7252cf0e138fd874e6d45d3d9188ac0c9709678e009368939919",
+        "backend_drive_damping_runtime_effective": "b67e336b7217efa8a42ceb8c0265a54e29d59e949b01efa723d0c05f4ab79fd3",
+        "backend_drive_stiffness_runtime_effective": "b67e336b7217efa8a42ceb8c0265a54e29d59e949b01efa723d0c05f4ab79fd3",
+        "effort_limit_runtime_effective": "d2945a6b62236047d48ecf69bafda4099c84df58b4c56609bf534ff23074d00c",
+        "friction_runtime_effective": "82734f17d601d7eb1e25ccab97a8797384ff6d3feee5c043d45fbc972006b4dc",
+        "gear_or_transmission_runtime_effective": "c890653b95fe8b638e9f1a0e4d03646d965e53323c03cc77442a6215121efbb4",
+        "kd_runtime_effective": "f97922838c9ed5cf392a7035b32e244860de7441bcf6f321e88b6bdb4a6e4d75",
+        "kp_runtime_effective": "b6b912b816a8ff8271d26b12e889c16359eafbd390781ac31dad78244929c78d",
+        "passive_joint_damping_runtime_effective": "c890653b95fe8b638e9f1a0e4d03646d965e53323c03cc77442a6215121efbb4",
+        "velocity_limit_runtime_effective": "c890653b95fe8b638e9f1a0e4d03646d965e53323c03cc77442a6215121efbb4"
+      },
+      "case_id": "ovphysx.left.effective_readback.r02",
+      "worker_payload_sha256": "2eed27934d2ddf6cd8017690b7005b03c209fdfc2bd994192c278f25ed30daa5"
+    },
+    {
+      "canonical_vector_sha256": {
+        "armature_runtime_effective": "50b58676c19a7252cf0e138fd874e6d45d3d9188ac0c9709678e009368939919",
+        "backend_drive_damping_runtime_effective": "b67e336b7217efa8a42ceb8c0265a54e29d59e949b01efa723d0c05f4ab79fd3",
+        "backend_drive_stiffness_runtime_effective": "b67e336b7217efa8a42ceb8c0265a54e29d59e949b01efa723d0c05f4ab79fd3",
+        "effort_limit_runtime_effective": "d2945a6b62236047d48ecf69bafda4099c84df58b4c56609bf534ff23074d00c",
+        "friction_runtime_effective": "82734f17d601d7eb1e25ccab97a8797384ff6d3feee5c043d45fbc972006b4dc",
+        "gear_or_transmission_runtime_effective": "c890653b95fe8b638e9f1a0e4d03646d965e53323c03cc77442a6215121efbb4",
+        "kd_runtime_effective": "f97922838c9ed5cf392a7035b32e244860de7441bcf6f321e88b6bdb4a6e4d75",
+        "kp_runtime_effective": "b6b912b816a8ff8271d26b12e889c16359eafbd390781ac31dad78244929c78d",
+        "passive_joint_damping_runtime_effective": "c890653b95fe8b638e9f1a0e4d03646d965e53323c03cc77442a6215121efbb4",
+        "velocity_limit_runtime_effective": "c890653b95fe8b638e9f1a0e4d03646d965e53323c03cc77442a6215121efbb4"
+      },
+      "case_id": "ovphysx.right.effective_readback.r01",
+      "worker_payload_sha256": "8286ce3b6bdee966beb588e8433f87ec7d49f12af694bda8cf77c2f616d6e3d5"
+    },
+    {
+      "canonical_vector_sha256": {
+        "armature_runtime_effective": "50b58676c19a7252cf0e138fd874e6d45d3d9188ac0c9709678e009368939919",
+        "backend_drive_damping_runtime_effective": "b67e336b7217efa8a42ceb8c0265a54e29d59e949b01efa723d0c05f4ab79fd3",
+        "backend_drive_stiffness_runtime_effective": "b67e336b7217efa8a42ceb8c0265a54e29d59e949b01efa723d0c05f4ab79fd3",
+        "effort_limit_runtime_effective": "d2945a6b62236047d48ecf69bafda4099c84df58b4c56609bf534ff23074d00c",
+        "friction_runtime_effective": "82734f17d601d7eb1e25ccab97a8797384ff6d3feee5c043d45fbc972006b4dc",
+        "gear_or_transmission_runtime_effective": "c890653b95fe8b638e9f1a0e4d03646d965e53323c03cc77442a6215121efbb4",
+        "kd_runtime_effective": "f97922838c9ed5cf392a7035b32e244860de7441bcf6f321e88b6bdb4a6e4d75",
+        "kp_runtime_effective": "b6b912b816a8ff8271d26b12e889c16359eafbd390781ac31dad78244929c78d",
+        "passive_joint_damping_runtime_effective": "c890653b95fe8b638e9f1a0e4d03646d965e53323c03cc77442a6215121efbb4",
+        "velocity_limit_runtime_effective": "c890653b95fe8b638e9f1a0e4d03646d965e53323c03cc77442a6215121efbb4"
+      },
+      "case_id": "ovphysx.right.effective_readback.r02",
+      "worker_payload_sha256": "71d1a6a8dbe446ce43747d66a7e4579529a97b30baa495a179e4727b348de00a"
+    }
+  ],
+  "private_raw_evidence": {
+    "included_in_private_bundle": true,
+    "omitted_identity_field_count": 4,
+    "public_values_omitted": true
+  },
+  "reproducibility": {
+    "canonical_numeric_vector_hashes_exact": true,
+    "mapping_exact": true,
+    "solver_runtime_exact": true
+  },
+  "safe_provenance": {
+    "asset_commit": "6eea427eb24189519f32b9f21674cd534d3f973c",
+    "asset_git_tree": "bb00a9d5527b8a76de576ce876ebece67d8ffde1",
+    "canonical_lf_asset_tree_sha256": "b198e39b1030f279bf531c01d7e2321339dccf4482e662e6e8c671c9499d54ad",
+    "device": "cuda:0",
+    "driver_version": "570.158.01",
+    "freeze_a_config_sha256": "12c89fd8e0cd3bfa849a96a2e133b22e9191fc0ca6188f18fde4960d4221ab4c",
+    "gate0_manifest_file_sha256": "a95a1da0d38abac8b3eccf18ea0b618b4898e35a6102017a2f0e024a9a4d5244",
+    "gate0_manifest_semantic_sha256": "576d8663a71692d6f5bd148ad719c9074ce0faceca6e4169bd8fcd14dc09899e",
+    "gpu_name": "NVIDIA A800-SXM4-40GB",
+    "isaac_lab_version": "6.1.14",
+    "isaac_sim_version": "not-installed-kitless",
+    "physx_version": "0.4.13",
+    "probe_source_sha256": "bb2d4ae59f8c16796d586f406aea6065e07e3b5d7a570ed614f8e585ffe5755f",
+    "python_version": "3.12.14",
+    "pytorch_version": "2.10.0+cu128",
+    "source_archive_sha256": "a4e925c2ce0cd58463738d2472bb77980c20077d42bce7717528dff693a35006",
+    "source_revision": "44571ea60201f77ca93d49c9c14cb2d28152c30f",
+    "source_tree": "d2a03e8ecceb46971e5c75debdb738baea63a4a3"
+  },
+  "schema_version": 1,
+  "semantic_classification": {
+    "armature": {
+      "classification": "UNMAPPABLE",
+      "reason": "This descriptive OVPhysX-only readback does not by itself verify every cross-backend physical/action-law requirement for DIRECT_TRANSFERABLE.",
+      "source_locators": [
+        "composed-usd:/World/Env_0/Robot/joints/left_index_DIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_index_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_index_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_index_PIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_middle_DIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_middle_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_middle_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_middle_PIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_CMC.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_DIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_PIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_ring_DIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_ring_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_ring_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_ring_PIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_CMC_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_CMC_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_IP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_index_DIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_index_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_index_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_index_PIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_middle_DIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_middle_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_middle_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_middle_PIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_CMC.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_DIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_PIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_ring_DIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_ring_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_ring_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_ring_PIP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_CMC_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_CMC_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_IP.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_MCP_AA.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_MCP_FE.physxJoint:armature;ovphysx.TensorDataType.DOF_ARMATURE/root_view_cpu_numpy_binding"
+      ]
+    },
+    "control_drive": {
+      "classification": "UNMAPPABLE",
+      "reason": "Same names or numbers do not prove equal controller, transmission, limit, or passive-force laws across engines.",
+      "source_locators": [
+        "IdealPDActuator.damping_torch",
+        "IdealPDActuator.effort_limit_and_effort_limit_sim_torch",
+        "IdealPDActuator.stiffness_torch",
+        "OVPhysXAdapter.backend_joint_dynamics.velocity_limit_readback",
+        "OVPhysXAdapter.set_position_targets/IdealPDActuator.compute",
+        "isaaclab.actuators.IdealPDActuator",
+        "ovphysx.TensorDataType.DOF_DAMPING/root_view_cpu_numpy_binding",
+        "ovphysx.TensorDataType.DOF_STIFFNESS/root_view_cpu_numpy_binding",
+        "pinned-isaaclab-ovphysx:ArticulationData"
+      ]
+    },
+    "friction": {
+      "classification": "UNMAPPABLE",
+      "reason": "Pinned wrapper and authoritative API labels conflict for non-viscous slots; numeric equality or closeness cannot establish MuJoCo equivalence.",
+      "source_locators": [
+        "composed-usd:/World/Env_0/Robot/joints/left_index_DIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_index_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_index_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_index_PIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_middle_DIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_middle_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_middle_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_middle_PIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_CMC.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_DIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_pinky_PIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_ring_DIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_ring_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_ring_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_ring_PIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_CMC_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_CMC_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_IP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/left_thumb_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_index_DIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_index_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_index_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_index_PIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_middle_DIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_middle_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_middle_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_middle_PIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_CMC.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_DIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_pinky_PIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_ring_DIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_ring_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_ring_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_ring_PIP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_CMC_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_CMC_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_IP.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_MCP_AA.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding",
+        "composed-usd:/World/Env_0/Robot/joints/right_thumb_MCP_FE.physxJoint:jointFriction;ovphysx.TensorDataType.DOF_FRICTION_PROPERTIES/root_view_cpu_numpy_binding"
+      ]
+    },
+    "solver_runtime": {
+      "classification": "UNMAPPABLE",
+      "field_classifications": {
+        "execution_pipeline": {
+          "classification": "UNMAPPABLE",
+          "reason": "At least one frozen instance lacks an authored, resolved, or runtime-effective layer; Freeze A classifies incomplete or ambiguous evidence as UNMAPPABLE."
+        },
+        "integrator": {
+          "classification": "UNMAPPABLE",
+          "reason": "At least one frozen instance lacks an authored, resolved, or runtime-effective layer; Freeze A classifies incomplete or ambiguous evidence as UNMAPPABLE."
+        },
+        "physics_dt_s": {
+          "classification": "UNMAPPABLE",
+          "reason": "At least one frozen instance lacks an authored, resolved, or runtime-effective layer; Freeze A classifies incomplete or ambiguous evidence as UNMAPPABLE."
+        },
+        "position_iterations": {
+          "classification": "UNMAPPABLE",
+          "reason": "At least one frozen instance lacks an authored, resolved, or runtime-effective layer; Freeze A classifies incomplete or ambiguous evidence as UNMAPPABLE."
+        },
+        "sleep_threshold": {
+          "classification": "UNMAPPABLE",
+          "reason": "At least one frozen instance lacks an authored, resolved, or runtime-effective layer; Freeze A classifies incomplete or ambiguous evidence as UNMAPPABLE."
+        },
+        "solver_type": {
+          "classification": "UNMAPPABLE",
+          "reason": "At least one frozen instance lacks an authored, resolved, or runtime-effective layer; Freeze A classifies incomplete or ambiguous evidence as UNMAPPABLE."
+        },
+        "stabilization": {
+          "classification": "UNMAPPABLE",
+          "reason": "At least one frozen instance lacks an authored, resolved, or runtime-effective layer; Freeze A classifies incomplete or ambiguous evidence as UNMAPPABLE."
+        },
+        "substeps": {
+          "classification": "UNMAPPABLE",
+          "reason": "At least one frozen instance lacks an authored, resolved, or runtime-effective layer; Freeze A classifies incomplete or ambiguous evidence as UNMAPPABLE."
+        },
+        "tolerances": {
+          "classification": "UNMAPPABLE",
+          "reason": "At least one frozen instance lacks an authored, resolved, or runtime-effective layer; Freeze A classifies incomplete or ambiguous evidence as UNMAPPABLE."
+        },
+        "velocity_iterations": {
+          "classification": "UNMAPPABLE",
+          "reason": "At least one frozen instance lacks an authored, resolved, or runtime-effective layer; Freeze A classifies incomplete or ambiguous evidence as UNMAPPABLE."
+        }
+      },
+      "reason": "Incomplete or ambiguous solver evidence takes precedence and is UNMAPPABLE; only fully available solver evidence could remain SENSITIVITY_ONLY, never an equivalent parameter.",
+      "source_locators": [
+        "OVPhysXAdapter.device/runtime_api",
+        "OVPhysXAdapter.requested_dt/SimulationCfg.dt/SimulationContext.get_physics_dt_config_accessor",
+        "OVPhysXAdapter.step/ovphysx.PhysX.step_sync",
+        "isaaclab_ovphysx.physics.OvPhysxCfg",
+        "live-composed-usd-probe:/World/Env_0/Robot/root_joint#physxArticulation:sleepThreshold",
+        "live-composed-usd-probe:/World/Env_0/Robot/root_joint#physxArticulation:solverPositionIterationCount | live-composed-usd-probe:/physicsScene#physxScene:minPositionIterationCount | live-composed-usd-probe:/physicsScene#physxScene:maxPositionIterationCount",
+        "live-composed-usd-probe:/World/Env_0/Robot/root_joint#physxArticulation:solverVelocityIterationCount | live-composed-usd-probe:/physicsScene#physxScene:minVelocityIterationCount | live-composed-usd-probe:/physicsScene#physxScene:maxVelocityIterationCount",
+        "live-composed-usd-probe:/World/Env_0/Robot/root_joint#physxArticulation:stabilizationThreshold | live-composed-usd-probe:/physicsScene#physxScene:timeStepsPerSecond",
+        "live-composed-usd-probe:/physicsScene#physxScene:enableStabilization",
+        "live-composed-usd-probe:/physicsScene#physxScene:solverType"
+      ]
+    }
+  },
+  "status": "READBACK_VALID"
+}

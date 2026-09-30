@@ -1,0 +1,180 @@
+{
+  "bounded_compute_budget": {
+    "manual_value_tuning_allowed": false,
+    "maximum_gpu_hours": 0.5,
+    "maximum_mujoco_cases": 8,
+    "maximum_ovphysx_cases": 16
+  },
+  "candidate_hypothesis": "In the pinned kit-less OVPhysX stack with explicit IdealPD control, changing only the live composed USD legacy physxJoint:jointFriction opinions from exact R1 values to literal positive float32 0.0 produces a bilateral, dt-stable small_step trajectory change.",
+  "claim_boundary": {
+    "allowed": "Report only whether the preregistered native OVPhysX input-sensitivity pattern is SUPPORTED, NOT_SUPPORTED, or INCONCLUSIVE after every validity gate passes; validity failure receives no scientific label, and no cross-engine parameter equivalence, upstream bug, hardware, Sim2Real, or formal Gate 0 rewrite claim is made.",
+    "forbidden": [
+      "cross_engine_parameter_equivalence",
+      "official_bug_claim",
+      "hardware_or_Sim2Real_claim",
+      "formal_Gate_0_rewrite"
+    ],
+    "formal_gate0_pass_ready_unchanged": false,
+    "formal_gate0_status_unchanged": "DIVERGENT"
+  },
+  "control_and_force_law": {
+    "actuator_model": "IdealPDActuator_explicit_PD_effort",
+    "control_mode": "position",
+    "mounting": "fixed_base",
+    "mujoco_mutation": "none",
+    "non_intervention_configuration": "invariant_between_ovphysx_sham_and_zero",
+    "target": "canonical_small_step_all_22_joints"
+  },
+  "controls": [
+    "same_source_unchanged_mujoco_control",
+    "same_source_ovphysx_sham",
+    "frozen_formal_mujoco_reference",
+    "frozen_formal_ovphysx_reference",
+    "left_and_right_hand_symmetry_check",
+    "fresh_process_repeatability",
+    "dt_halving",
+    "non_target_readback_invariance"
+  ],
+  "decision_thresholds": {
+    "NOT_SUPPORTED_if_all_S_at_most": 0.1,
+    "SUPPORTED_if_all_S_at_least": 0.25,
+    "expected_s_count": 8,
+    "otherwise": "INCONCLUSIVE",
+    "validity_failure": "validation_status_INVALID_and_scientific_label_null"
+  },
+  "inputs": {
+    "asset_commit": "6eea427eb24189519f32b9f21674cd534d3f973c",
+    "asset_git_tree": "bb00a9d5527b8a76de576ce876ebece67d8ffde1",
+    "canonical_lf_asset_tree_sha256": "b198e39b1030f279bf531c01d7e2321339dccf4482e662e6e8c671c9499d54ad",
+    "formal_crosssim_window_rmse": {
+      "left": {
+        "base": {
+          "frame_position_rmse_m": 0.0008943647638235895,
+          "joint_rmse_rad": 0.009952738387169443
+        },
+        "halved": {
+          "frame_position_rmse_m": 0.0008891932640127172,
+          "joint_rmse_rad": 0.009899715565098634
+        }
+      },
+      "right": {
+        "base": {
+          "frame_position_rmse_m": 0.0008945261965125528,
+          "joint_rmse_rad": 0.009959628236553528
+        },
+        "halved": {
+          "frame_position_rmse_m": 0.0008893609189820966,
+          "joint_rmse_rad": 0.009906822010082781
+        }
+      }
+    },
+    "formal_gate0_bundle_root_sha256": "d2e028d884f5484f7a7d5ecc0506201ff751c0847ed87b7a63d3a3b8cd056505",
+    "formal_gate0_source_revision": "c571d9bb37a619fe9e867447d3be448acc615e3c",
+    "freeze_a_config_sha256": "12c89fd8e0cd3bfa849a96a2e133b22e9191fc0ca6188f18fde4960d4221ab4c",
+    "freeze_b_source_revision": "d90e568ab83398cfc3ec4812fd0988923e5a8890",
+    "freeze_b_source_tree": "0115bf40dffb82cd8182783b433d7ebede93f416",
+    "gate0_manifest_file_sha256": "a95a1da0d38abac8b3eccf18ea0b618b4898e35a6102017a2f0e024a9a4d5244",
+    "gate0_manifest_semantic_sha256": "576d8663a71692d6f5bd148ad719c9074ce0faceca6e4169bd8fcd14dc09899e",
+    "readback_bundle_root_sha256": "858eee53e0ece9956a06b7cbd72a3d0a8348156e3c236ebf31ffd72fceb4fd4a",
+    "readback_case_sha256": {
+      "ovphysx.left.effective_readback.r01": "df41b21346d39a1d81d33817b35766525c8438dc1b3898023f5410f7deaf940f",
+      "ovphysx.left.effective_readback.r02": "2eed27934d2ddf6cd8017690b7005b03c209fdfc2bd994192c278f25ed30daa5",
+      "ovphysx.right.effective_readback.r01": "8286ce3b6bdee966beb588e8433f87ec7d49f12af694bda8cf77c2f616d6e3d5",
+      "ovphysx.right.effective_readback.r02": "71d1a6a8dbe446ce43747d66a7e4579529a97b30baa495a179e4727b348de00a"
+    },
+    "readback_source_revision": "44571ea60201f77ca93d49c9c14cb2d28152c30f",
+    "readback_source_tree": "d2a03e8ecceb46971e5c75debdb738baea63a4a3",
+    "readback_summary_sha256": "d359ffd9622907658edc3c412b1870aab8ae717d1a5805f77bc7b5f530b2d055"
+  },
+  "intervention": {
+    "application_time": "live_composed_stage_after_articulation_construction_while_articulation_uninitialized_before_first_simulation_reset",
+    "backend": "ovphysx",
+    "semantic_boundary": "native_ovphysx_input_sensitivity_only_no_cross_engine_transfer",
+    "sham": "write_exact_frozen_authored_float32_value",
+    "source_attribute": "physxJoint:jointFriction",
+    "treatment": "write_literal_positive_float32_zero",
+    "treatment_value": 0.0
+  },
+  "metrics": {
+    "Dp": "elementwise_RMSE_over_window_times_5_frame_xyz_positions_m",
+    "Dq": "elementwise_RMSE_over_window_times_22_joint_positions_rad",
+    "S": "treatment_vs_sham_RMSE_divided_by_frozen_crosssim_baseline_RMSE",
+    "axes": [
+      "left.base.Dq",
+      "left.base.Dp",
+      "left.halved.Dq",
+      "left.halved.Dp",
+      "right.base.Dq",
+      "right.base.Dp",
+      "right.halved.Dq",
+      "right.halved.Dp"
+    ],
+    "orientation": "validity_repeatability_and_dt_halving_only_not_in_S",
+    "repeat_collapse": "primary_metrics_use_r01_only_after_r01_r02_repeatability_gate_passes_for_every_backend_hand_dt_role;_r02_is_gate_only_and_must_not_be_selected_for_favorable_results",
+    "secondary_R": "1_minus_zero_vs_frozen_mujoco_RMSE_divided_by_frozen_crosssim_baseline_RMSE",
+    "secondary_R_role": "descriptive_gap_direction_only_cannot_change_primary_status"
+  },
+  "privacy": {
+    "aggregate_baseline_rmse_public": true,
+    "machine_gpu_session_identifiers_public": false,
+    "private_plan_visibility": "private",
+    "public_contains_per_joint_values": false
+  },
+  "private_plan_sha256": "b4416b6869bdae90743ace253212ef43f7e592e30a93093f470c648261bab1ea",
+  "protocol_id": "ovphysx-legacy-joint-friction-freeze-b-v1",
+  "run_matrix": {
+    "fresh_process_per_case": true,
+    "mujoco_case_count": 8,
+    "mujoco_roles": [
+      "control"
+    ],
+    "ovphysx_case_count": 16,
+    "ovphysx_order_pinned_in_private_plan": true,
+    "ovphysx_roles": [
+      "sham",
+      "zero"
+    ]
+  },
+  "scenario": {
+    "base_dt_s": 0.002,
+    "duration_s": 0.5,
+    "environment": "zero_gravity_no_ground_noncontact_target",
+    "halved_dt_s": 0.001,
+    "hands": [
+      "left",
+      "right"
+    ],
+    "repeat_count": 2,
+    "scenario_id": "small_step",
+    "window_end_s": 0.5,
+    "window_selection": "recorded_time_s >= start and recorded_time_s <= end",
+    "window_start_s": 0.1
+  },
+  "schema_version": 1,
+  "semantic_classification_per_field_family": {
+    "armature": "UNMAPPABLE",
+    "control_drive": "UNMAPPABLE",
+    "friction": "UNMAPPABLE",
+    "solver_runtime": "UNMAPPABLE"
+  },
+  "state": "PREREGISTERED_BEFORE_ANY_FREEZE_B_TRAJECTORY",
+  "validity_thresholds": {
+    "contact_observation_boundary": "ovphysx_contact_check_performed_false",
+    "dt_halving_frame_orientation_max_rad": 0.02,
+    "dt_halving_frame_position_max_m": 0.001,
+    "dt_halving_joint_max_abs_rad": 0.01,
+    "formal_baseline_recheck_abs_tolerance": 1e-15,
+    "max_abs_backend_joint_velocity_rad_s": 1000.0,
+    "max_abs_canonical_joint_position_rad": 6.283185307179586,
+    "max_abs_canonical_position_target_rad": 6.283185307179586,
+    "max_frame_origin_distance_m": 10.0,
+    "maximum_nonfinite_count": 0,
+    "minimum_completion_fraction": 1.0,
+    "mujoco_contact_count": 0,
+    "ovphysx_contact_count": null,
+    "position_target_readback_max_abs_rad": 1e-06,
+    "quaternion_norm_abs_tolerance": 0.001,
+    "repeatability_max_abs": 1e-09,
+    "same_source_bridge_max_abs": 1e-09
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wave-asset-qa.local/schemas/parity-manifest-v2.schema.json",
+  "title": "WaveSimParity canonical waveform scenario manifest v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "provenance",
+    "simulators",
+    "hands",
+    "scenarios",
+    "run_policy"
+  ],
+  "properties": {
+    "schema_version": { "const": 2 },
+    "manifest_id": { "$ref": "#/$defs/identifier" },
+    "provenance": { "$ref": "#/$defs/provenance" },
+    "simulators": { "const": ["mujoco", "ovphysx"] },
+    "hands": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        { "$ref": "#/$defs/leftHand" },
+        { "$ref": "#/$defs/rightHand" }
+      ],
+      "items": false
+    },
+    "scenarios": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        { "$ref": "#/$defs/offsetSine" },
+        { "$ref": "#/$defs/offsetLinearChirp" }
+      ],
+      "items": false
+    },
+    "run_policy": { "$ref": "#/$defs/runPolicy" }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_.-]*$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "relativeXmlPath": {
+      "type": "string",
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+\\.xml$"
+    },
+    "relativeUsdaPath": {
+      "type": "string",
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+\\.usda$"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "commit",
+        "asset_git_tree",
+        "canonical_lf_asset_tree_sha256",
+        "asset_root"
+      ],
+      "properties": {
+        "repository": { "type": "string", "pattern": "^https://" },
+        "commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "asset_git_tree": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "canonical_lf_asset_tree_sha256": { "$ref": "#/$defs/sha256" },
+        "asset_root": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+        }
+      }
+    },
+    "modelPaths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mujoco", "ovphysx"],
+      "properties": {
+        "mujoco": { "$ref": "#/$defs/relativeXmlPath" },
+        "ovphysx": { "$ref": "#/$defs/relativeUsdaPath" }
+      }
+    },
+    "hand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "side",
+        "model_name",
+        "mounting",
+        "control_mode",
+        "model_paths",
+        "joint_names",
+        "distal_frame_names"
+      ],
+      "properties": {
+        "side": { "enum": ["left", "right"] },
+        "model_name": { "enum": ["left_sharpa_wave", "right_sharpa_wave"] },
+        "mounting": { "const": "fixed_base" },
+        "control_mode": { "const": "position" },
+        "model_paths": { "$ref": "#/$defs/modelPaths" },
+        "joint_names": {
+          "type": "array",
+          "minItems": 22,
+          "maxItems": 22,
+          "uniqueItems": true,
+          "items": { "type": "string" }
+        },
+        "distal_frame_names": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "_DP$" }
+        }
+      }
+    },
+    "leftHand": {
+      "allOf": [
+        { "$ref": "#/$defs/hand" },
+        {
+          "properties": {
+            "side": { "const": "left" },
+            "model_name": { "const": "left_sharpa_wave" }
+          }
+        }
+      ]
+    },
+    "rightHand": {
+      "allOf": [
+        { "$ref": "#/$defs/hand" },
+        {
+          "properties": {
+            "side": { "const": "right" },
+            "model_name": { "const": "right_sharpa_wave" }
+          }
+        }
+      ]
+    },
+    "waveformScenario": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scenario_id",
+        "kind",
+        "duration_s",
+        "dt_s",
+        "gravity_m_s2",
+        "initial_position_rad",
+        "command_offset_rad",
+        "command_amplitude_rad",
+        "frequency_start_hz",
+        "frequency_end_hz",
+        "expect_no_contacts"
+      ],
+      "properties": {
+        "scenario_id": { "$ref": "#/$defs/identifier" },
+        "kind": { "enum": ["offset_sine", "offset_linear_chirp"] },
+        "duration_s": { "const": 4.0 },
+        "dt_s": { "const": 0.002 },
+        "gravity_m_s2": { "const": [0.0, 0.0, 0.0] },
+        "initial_position_rad": { "const": 0.0 },
+        "command_offset_rad": { "const": 0.025 },
+        "command_amplitude_rad": { "const": 0.025 },
+        "frequency_start_hz": { "type": "number", "exclusiveMinimum": 0 },
+        "frequency_end_hz": { "type": "number", "exclusiveMinimum": 0 },
+        "expect_no_contacts": { "const": true }
+      }
+    },
+    "offsetSine": {
+      "allOf": [
+        { "$ref": "#/$defs/waveformScenario" },
+        {
+          "properties": {
+            "scenario_id": { "const": "offset_sine" },
+            "kind": { "const": "offset_sine" },
+            "frequency_start_hz": { "const": 1.0 },
+            "frequency_end_hz": { "const": 1.0 }
+          }
+        }
+      ]
+    },
+    "offsetLinearChirp": {
+      "allOf": [
+        { "$ref": "#/$defs/waveformScenario" },
+        {
+          "properties": {
+            "scenario_id": { "const": "offset_linear_chirp" },
+            "kind": { "const": "offset_linear_chirp" },
+            "frequency_start_hz": { "const": 0.5 },
+            "frequency_end_hz": { "const": 4.0 }
+          }
+        }
+      ]
+    },
+    "runPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repeat_count",
+        "dt_halving_scenario_ids",
+        "minimum_completion_fraction"
+      ],
+      "properties": {
+        "repeat_count": { "const": 2 },
+        "dt_halving_scenario_ids": {
+          "const": ["offset_sine", "offset_linear_chirp"]
+        },
+        "minimum_completion_fraction": { "const": 0.99 }
+      }
+    }
+  }
+}

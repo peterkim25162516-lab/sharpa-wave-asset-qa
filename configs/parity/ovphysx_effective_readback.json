@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "experiment_id": "ovphysx-both-hands-effective-readback-freeze-a-v1",
+  "classification": "descriptive_effective_parameter_readback_not_formal_gate0",
+  "plan_stage": "freeze_a_before_any_new_ovphysx_parameter_value_is_observed",
+  "scope": {
+    "backend": "ovphysx",
+    "hands": [
+      "left",
+      "right"
+    ],
+    "mounting": "fixed_base",
+    "control_mode_context": "position",
+    "readback_only": true,
+    "trajectory_in_scope": false
+  },
+  "frozen_context": {
+    "gate0_manifest_path": "configs/parity/gate0.json",
+    "gate0_manifest_file_sha256": "a95a1da0d38abac8b3eccf18ea0b618b4898e35a6102017a2f0e024a9a4d5244",
+    "gate0_manifest_semantic_sha256": "576d8663a71692d6f5bd148ad719c9074ce0faceca6e4169bd8fcd14dc09899e",
+    "asset_commit": "6eea427eb24189519f32b9f21674cd534d3f973c",
+    "asset_git_tree": "bb00a9d5527b8a76de576ce876ebece67d8ffde1",
+    "canonical_lf_asset_tree_sha256": "b198e39b1030f279bf531c01d7e2321339dccf4482e662e6e8c671c9499d54ad",
+    "formal_gate0_bundle_root_sha256": "d2e028d884f5484f7a7d5ecc0506201ff751c0847ed87b7a63d3a3b8cd056505",
+    "context_only_prior_diagnostic_bundle_roots_sha256": {
+      "mujoco_friction_scale": "0804626ef0b7009a1e6c223284c210550e568593852046bc9b2b31d5bf3e4803",
+      "mujoco_total_viscous": "a27826a0909afbf550f2bda198d7c7aab564e019a06a40aa63e829de92c0018c",
+      "thumb_dp_common_mujoco_fk": "d2fbad78e704f7cc673e2ab751473ebe625c86e52b5a6082854b98e1112a1624"
+    },
+    "prior_evidence_role": "context_only_not_a_source_of_new_ovphysx_parameter_values_and_not_a_causal_identification"
+  },
+  "expected_instances": [
+    {
+      "side": "left",
+      "instance_index": 1,
+      "case_id": "ovphysx.left.effective_readback.r01"
+    },
+    {
+      "side": "left",
+      "instance_index": 2,
+      "case_id": "ovphysx.left.effective_readback.r02"
+    },
+    {
+      "side": "right",
+      "instance_index": 1,
+      "case_id": "ovphysx.right.effective_readback.r01"
+    },
+    {
+      "side": "right",
+      "instance_index": 2,
+      "case_id": "ovphysx.right.effective_readback.r02"
+    }
+  ],
+  "execution_contract": {
+    "fresh_instances_per_hand": 2,
+    "total_instance_count": 4,
+    "fresh_process_per_instance": true,
+    "reuse_of_articulation_or_physics_scene_forbidden": true,
+    "readback_phase": "after_adapter_initialization_and_reset_before_any_user_or_experimental_trace_step",
+    "user_or_experimental_trace_dynamics_advance_allowed": false,
+    "required_user_trace_simulation_step_call_count": 0,
+    "required_trajectory_sample_count": 0,
+    "required_trace_time_s": 0.0,
+    "initialization_reset_zero_state_and_target_writes_allowed": true,
+    "required_initialization_state_write_performed": true,
+    "initialization_write_scope": "zero q and qd plus zero position velocity and effort targets only",
+    "experimental_control_command_allowed": false,
+    "experimental_target_write_allowed": false,
+    "required_experimental_target_write_performed": false,
+    "gpu_warmup_and_internal_initialization_advance_must_be_disclosed_separately": true,
+    "renderer_allowed": false,
+    "camera_allowed": false,
+    "readback_order": "canonical_gate0_joint_order",
+    "private_raw_evidence_required": true
+  },
+  "coverage_contract": {
+    "canonical_joint_source": "configs/parity/gate0.json hands[*].joint_names",
+    "canonical_joint_count_per_hand": 22,
+    "canonical_joint_count_total": 44,
+    "require_exact_set_per_instance": true,
+    "require_unique_canonical_joint_name_per_instance": true,
+    "require_unique_backend_joint_index_per_instance": true,
+    "require_exact_mapping_reproduction_between_fresh_instances": true,
+    "missing_extra_or_duplicate_joint_policy": "READBACK_INVALID"
+  },
+  "readback_schema": {
+    "required_top_level_fields": [
+      "schema_version",
+      "experiment_id",
+      "status",
+      "instances",
+      "coverage",
+      "reproducibility",
+      "claim_boundary",
+      "freeze_b_required"
+    ],
+    "required_instance_fields": [
+      "case_id",
+      "side",
+      "instance_index",
+      "fresh_instance_id",
+      "fresh_process_id",
+      "readback_only_after_initialization",
+      "initialization_state_write_performed",
+      "experimental_trace_dynamics_advance_performed",
+      "experimental_control_command_applied",
+      "experimental_target_write_performed",
+      "user_trace_simulation_step_call_count",
+      "trajectory_sample_count",
+      "trace_time_s",
+      "gpu_warmup_outside_trace",
+      "initialization_internal_advance_exposure",
+      "provenance",
+      "solver_runtime",
+      "dof_records",
+      "canonical_vector_sha256"
+    ],
+    "required_provenance_fields": [
+      "source_revision",
+      "source_tree",
+      "source_archive_sha256",
+      "source_snapshot_sha256",
+      "probe_source_sha256",
+      "pipeline_module_sha256",
+      "freeze_a_config_sha256",
+      "gate0_manifest_file_sha256",
+      "gate0_manifest_semantic_sha256",
+      "asset_commit",
+      "asset_git_tree",
+      "canonical_lf_asset_tree_sha256",
+      "python_version",
+      "isaac_lab_version",
+      "isaac_sim_version",
+      "physx_version",
+      "pytorch_version",
+      "device",
+      "gpu_name",
+      "gpu_uuid",
+      "driver_version",
+      "machine_id",
+      "session_id",
+      "recorded_at_utc"
+    ],
+    "required_solver_runtime_fields": [
+      "solver_type",
+      "position_iterations",
+      "velocity_iterations",
+      "physics_dt_s",
+      "substeps",
+      "integrator",
+      "stabilization",
+      "tolerances",
+      "sleep_threshold",
+      "execution_pipeline"
+    ],
+    "required_dof_record_fields": [
+      "mapping",
+      "friction",
+      "armature",
+      "control_drive"
+    ],
+    "required_mapping_fields": [
+      "side",
+      "canonical_joint_name",
+      "backend_joint_name",
+      "backend_joint_index",
+      "joint_prim_path",
+      "joint_type",
+      "axis",
+      "canonical_sign",
+      "canonical_offset_rad",
+      "canonical_unit",
+      "source_locator"
+    ],
+    "required_control_drive_fields": [
+      "controller_model",
+      "kp",
+      "kd",
+      "backend_drive_stiffness",
+      "backend_drive_damping",
+      "passive_joint_damping",
+      "gear_or_transmission",
+      "effort_limit",
+      "velocity_limit",
+      "target_interpretation"
+    ],
+    "required_evidence_fields": [
+      "availability",
+      "authored_value",
+      "resolved_value",
+      "runtime_effective_value",
+      "unavailable_layers",
+      "unit",
+      "semantics",
+      "source_locator",
+      "unavailable_reason"
+    ],
+    "allowed_availability": [
+      "available",
+      "partially_available",
+      "unavailable"
+    ],
+    "canonical_vector_sha256_required_keys": [
+      "friction_runtime_effective",
+      "armature_runtime_effective",
+      "kp_runtime_effective",
+      "kd_runtime_effective",
+      "backend_drive_stiffness_runtime_effective",
+      "backend_drive_damping_runtime_effective",
+      "passive_joint_damping_runtime_effective",
+      "gear_or_transmission_runtime_effective",
+      "effort_limit_runtime_effective",
+      "velocity_limit_runtime_effective"
+    ]
+  },
+  "value_contract": {
+    "all_present_numeric_values_must_be_finite": true,
+    "json_nonfinite_tokens_forbidden": true,
+    "missing_required_key_is_not_equivalent_to_unavailable": true,
+    "missing_required_key_policy": "READBACK_INVALID",
+    "explicit_unavailable_representation": {
+      "availability": "unavailable",
+      "affected_values": null,
+      "unavailable_layers_must_name_each_null_layer": true,
+      "nonempty_reason_required": true,
+      "semantic_consequence": "UNMAPPABLE"
+    },
+    "unavailable_is_never_interpreted_as_zero": true,
+    "normalized_hash_encoding": "UTF-8 canonical JSON with sort_keys=true separators=(',', ':') allow_nan=false",
+    "canonical_vector_order": "gate0 joint_names order for the matching hand",
+    "hash_algorithm": "sha256"
+  },
+  "reproducibility_contract": {
+    "comparison_scope": "within_hand_across_two_fresh_processes",
+    "categorical_and_mapping_match": "exact",
+    "canonical_numeric_vector_hash_match": "exact",
+    "solver_runtime_match": "exact_normalized_json",
+    "tolerance_or_rounding_allowed": false,
+    "fresh_instance_ids_must_be_unique": true,
+    "fresh_process_ids_must_be_unique": true,
+    "mismatch_policy": "READBACK_INVALID"
+  },
+  "semantic_classification": {
+    "allowed_classes": [
+      "DIRECT_TRANSFERABLE",
+      "ZERO_ONLY",
+      "SENSITIVITY_ONLY",
+      "UNMAPPABLE"
+    ],
+    "precedence": [
+      "explicit_unavailable_or_ambiguous_to_UNMAPPABLE",
+      "solver_runtime_to_SENSITIVITY_ONLY",
+      "legacy_or_unitless_friction_special_case",
+      "all_direct_requirements_to_DIRECT_TRANSFERABLE",
+      "all_zero_only_requirements_to_ZERO_ONLY",
+      "otherwise_UNMAPPABLE"
+    ],
+    "direct_transferable_requires_all": [
+      "runtime_effective_readback_available",
+      "same_physical_quantity",
+      "same_unit",
+      "same_canonical_coordinate",
+      "same_action_law"
+    ],
+    "zero_only_requires_all": [
+      "runtime_effective_readback_available",
+      "runtime_effective_value_exactly_zero",
+      "source_api_semantics_verify_zero_disables_term"
+    ],
+    "legacy_or_unitless_physx_friction_semantics": [
+      "legacy_unitless_joint_friction_coefficient",
+      "transmitted_force_fraction"
+    ],
+    "forced_boundaries": {
+      "unavailable_or_ambiguous": "UNMAPPABLE",
+      "solver_or_integrator_setting": "SENSITIVITY_ONLY",
+      "nonzero_legacy_or_unitless_physx_friction_to_mujoco_frictionloss_Nm": "UNMAPPABLE",
+      "verified_disabled_zero_for_otherwise_nontransferable_term": "ZERO_ONLY",
+      "same_name_numeric_equality_or_numeric_closeness_alone": "UNMAPPABLE"
+    },
+    "armature_direct_boundary": "DIRECT_TRANSFERABLE requires the same diagonal generalized inertia on the same canonical joint coordinate and a verified compatible unit; for a revolute joint the expected generalized-inertia unit is kg*m^2.",
+    "control_boundary": "A derived total such as effective Kd plus passive damping may be defined only after both terms have verified compatible torque-per-angular-velocity action laws and units; a matching number alone is not equivalence.",
+    "solver_boundary": "Solver type, iteration counts, stabilization, tolerances, substeps, and integrator settings are sensitivity variables or unmappable metadata, never cross-backend equivalent parameters."
+  },
+  "fail_closed": {
+    "invalid_status": "READBACK_INVALID",
+    "valid_status": "READBACK_VALID",
+    "stop_before_semantic_use_or_freeze_b": true,
+    "conditions": [
+      "unexpected_or_reused_instance",
+      "any_user_or_experimental_trace_simulation_step_control_command_or_target_write",
+      "missing_gpu_warmup_or_initialization_internal_advance_disclosure",
+      "missing_required_field_or_field_family",
+      "missing_extra_or_duplicate_canonical_joint",
+      "duplicate_backend_joint_index",
+      "canonical_coverage_not_44_of_44",
+      "nonfinite_numeric_value",
+      "canonical_vector_hash_mismatch",
+      "mapping_parameter_or_solver_mismatch_between_fresh_instances",
+      "source_manifest_asset_or_config_hash_mismatch"
+    ],
+    "partial_success_allowed": false
+  },
+  "freeze_b_contract": {
+    "state_at_freeze_a": "REQUIRED_NOT_CREATED",
+    "required_before_any_trajectory": true,
+    "trajectory_authorized_by_freeze_a": false,
+    "generation": "deterministic_from_valid_freeze_a_readback_and_predeclared_semantic_decision_tree",
+    "manual_value_tuning_allowed": false,
+    "unforeseen_or_ambiguous_semantics_policy": "STOP_SEMANTICS_UNMAPPABLE",
+    "required_frozen_fields": [
+      "freeze_a_config_sha256",
+      "readback_bundle_root_sha256",
+      "readback_summary_sha256",
+      "readback_source_revision",
+      "readback_source_tree",
+      "readback_case_hashes",
+      "semantic_classification_per_field_family",
+      "candidate_hypothesis",
+      "exact_per_joint_treatment_values",
+      "exact_control_and_force_law",
+      "gate0_manifest_file_sha256",
+      "gate0_manifest_semantic_sha256",
+      "asset_commit",
+      "canonical_lf_asset_tree_sha256",
+      "both_hands_run_matrix",
+      "controls",
+      "preregistered_metrics",
+      "preregistered_decision_thresholds",
+      "bounded_compute_budget",
+      "claim_boundary"
+    ],
+    "minimum_controls": [
+      "same_source_unchanged_mujoco_baseline",
+      "same_frozen_ovphysx_reference",
+      "left_and_right_hand_symmetry_check",
+      "repeatability",
+      "dt_halving"
+    ],
+    "manual_adjustment_consequence": "Any manual adjustment after values or trajectories are observed requires a new exploratory protocol and cannot inherit the frozen confirmatory label."
+  },
+  "output_policy": {
+    "raw_bundle_visibility": "private",
+    "private_fields": [
+      "machine_id",
+      "gpu_uuid",
+      "session_id",
+      "fresh_process_id"
+    ],
+    "public_safe_outputs": [
+      "sanitized field availability matrix",
+      "semantic classifications with source locators",
+      "44-of-44 coverage status",
+      "fresh-instance exact-reproduction status",
+      "content hashes"
+    ]
+  },
+  "claim_boundary": {
+    "allowed": "The readback is descriptive evidence of authored, resolved, and runtime-effective configuration exposed by the frozen OVPhysX stack without any user or experimental trace simulation.step call. Adapter initialization and reset zero-state or zero-target writes are disclosed, and any backend-internal GPU warmup or initialization advance is separately reported or explicitly unavailable.",
+    "forbidden": [
+      "causal explanation of an observed trajectory difference",
+      "parameter identification from motion",
+      "cross-engine parameter equivalence from names or numbers alone",
+      "measured or realized torque inference",
+      "backend or upstream bug claim",
+      "hardware or Sim2Real claim",
+      "formal Gate 0 status change"
+    ],
+    "formal_status_unchanged": "Gate 0 remains DIVERGENT and pass_ready=false until a separately frozen and executed protocol justifies any later update."
+  }
+}

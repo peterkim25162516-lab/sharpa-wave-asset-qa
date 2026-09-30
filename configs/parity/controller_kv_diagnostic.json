@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "experiment_id": "mujoco-total-viscous-alignment-via-controller-kv-v1",
+  "classification": "diagnostic_only_not_formal_gate0",
+  "scope": "left small_step base r01 under zero MuJoCo dry friction",
+  "frozen_inputs": {
+    "formal_bundle_root_sha256": "d2e028d884f5484f7a7d5ecc0506201ff751c0847ed87b7a63d3a3b8cd056505",
+    "formal_bundle_manifest_sha256": "d3b64ff8c2bea108a724e62f32994127b8dabb174701deb61a73611f671eb690",
+    "formal_finalization_sha256": "2a393c39777b01d79d56ba1dd3f2fea789f347e3412042de7ddd7b990bed28af",
+    "formal_ovphysx_run_sha256": "008ed804406ee32e58a5b701bc9feb9f4123a23bc13d521392a2525d0de2dc30",
+    "formal_source_revision": "c571d9bb37a619fe9e867447d3be448acc615e3c",
+    "formal_source_tree": "fe86e1ce279770db1a70ce74609166b282f151ff",
+    "friction_bundle_root_sha256": "0804626ef0b7009a1e6c223284c210550e568593852046bc9b2b31d5bf3e4803",
+    "friction_bundle_manifest_sha256": "6950a2cc14e4c1b7951c9d332e57ca748af05b6d2b08300bdaed857635e88f06",
+    "friction_scale_0_run_sha256": "b9e547cee1bced18aae93d0b21e6418e059a2f49f45d9cdbb8118c083fbaf758",
+    "friction_summary_sha256": "545c2515be009822618f272f3fdd1d8500027c71f1a178e4c36f0f9d785fca45",
+    "friction_source_revision": "e238b29934f2e341703ba1aa7decdab7cae53688",
+    "gate0_manifest_sha256": "576d8663a71692d6f5bd148ad719c9074ce0faceca6e4169bd8fcd14dc09899e",
+    "gate0_manifest_file_sha256": "a95a1da0d38abac8b3eccf18ea0b618b4898e35a6102017a2f0e024a9a4d5244",
+    "asset_commit": "6eea427eb24189519f32b9f21674cd534d3f973c",
+    "asset_git_tree": "bb00a9d5527b8a76de576ce876ebece67d8ffde1",
+    "canonical_lf_asset_tree_sha256": "b198e39b1030f279bf531c01d7e2321339dccf4482e662e6e8c671c9499d54ad",
+    "mujoco_model_sha256": "3cbeb46259d4ba63cbdb83085255d1a8f8031c51e0101a6622f6e7e81a64dc11"
+  },
+  "cases": {
+    "mujoco": "mujoco.left.small_step.base.r01",
+    "ovphysx": "ovphysx.left.small_step.base.r01"
+  },
+  "runs": [
+    {
+      "role": "same_source_control",
+      "dof_frictionloss_scale": 0.0,
+      "controller_kv_mode": "canonical_no_override"
+    },
+    {
+      "role": "total_viscous_aligned_via_controller_kv_treatment",
+      "dof_frictionloss_scale": 0.0,
+      "controller_kv_mode": "diagnostic_total_damping_override"
+    }
+  ],
+  "intervention": {
+    "name": "per_joint_total_viscous_alignment_via_controller_kv",
+    "ov_target_source": "IdealPDActuator.controller_dof_damping",
+    "ov_target_provenance_field": "controller_dof_damping",
+    "mujoco_effective_controller_kv_source": "-model.actuator_biasprm[actuator_id, 2]",
+    "mujoco_total_viscous_damping_definition": "effective_controller_kv + model.dof_damping[dof_index]",
+    "target_unit": "N*m*s/rad",
+    "unchanged": [
+      "canonical asset files",
+      "dof_frictionloss_scale=0",
+      "position targets",
+      "initial state",
+      "dt",
+      "controller Kp",
+      "joint passive damping",
+      "armature",
+      "gear and transmission",
+      "force limits",
+      "solver and gravity"
+    ],
+    "targets_in_canonical_joint_order": [
+      {
+        "canonical_id": "left_thumb_CMC_FE",
+        "target_total_viscous_damping_nm_s_per_rad": 0.24098604917526245
+      },
+      {
+        "canonical_id": "left_thumb_CMC_AA",
+        "target_total_viscous_damping_nm_s_per_rad": 0.45163971185684204
+      },
+      {
+        "canonical_id": "left_thumb_MCP_FE",
+        "target_total_viscous_damping_nm_s_per_rad": 0.18300272524356842
+      },
+      {
+        "canonical_id": "left_thumb_MCP_AA",
+        "target_total_viscous_damping_nm_s_per_rad": 0.20798367261886597
+      },
+      {
+        "canonical_id": "left_thumb_IP",
+        "target_total_viscous_damping_nm_s_per_rad": 0.03999245539307594
+      },
+      {
+        "canonical_id": "left_index_MCP_FE",
+        "target_total_viscous_damping_nm_s_per_rad": 0.18300272524356842
+      },
+      {
+        "canonical_id": "left_index_MCP_AA",
+        "target_total_viscous_damping_nm_s_per_rad": 0.20798367261886597
+      },
+      {
+        "canonical_id": "left_index_PIP",
+        "target_total_viscous_damping_nm_s_per_rad": 0.03999245539307594
+      },
+      {
+        "canonical_id": "left_index_DIP",
+        "target_total_viscous_damping_nm_s_per_rad": 0.031512677669525146
+      },
+      {
+        "canonical_id": "left_middle_MCP_FE",
+        "target_total_viscous_damping_nm_s_per_rad": 0.18300272524356842
+      },
+      {
+        "canonical_id": "left_middle_MCP_AA",
+        "target_total_viscous_damping_nm_s_per_rad": 0.20798367261886597
+      },
+      {
+        "canonical_id": "left_middle_PIP",
+        "target_total_viscous_damping_nm_s_per_rad": 0.03999245539307594
+      },
+      {
+        "canonical_id": "left_middle_DIP",
+        "target_total_viscous_damping_nm_s_per_rad": 0.031512677669525146
+      },
+      {
+        "canonical_id": "left_ring_MCP_FE",
+        "target_total_viscous_damping_nm_s_per_rad": 0.18300272524356842
+      },
+      {
+        "canonical_id": "left_ring_MCP_AA",
+        "target_total_viscous_damping_nm_s_per_rad": 0.20798367261886597
+      },
+      {
+        "canonical_id": "left_ring_PIP",
+        "target_total_viscous_damping_nm_s_per_rad": 0.03999245539307594
+      },
+      {
+        "canonical_id": "left_ring_DIP",
+        "target_total_viscous_damping_nm_s_per_rad": 0.031512677669525146
+      },
+      {
+        "canonical_id": "left_pinky_CMC",
+        "target_total_viscous_damping_nm_s_per_rad": 0.03924760967493057
+      },
+      {
+        "canonical_id": "left_pinky_MCP_FE",
+        "target_total_viscous_damping_nm_s_per_rad": 0.18300272524356842
+      },
+      {
+        "canonical_id": "left_pinky_MCP_AA",
+        "target_total_viscous_damping_nm_s_per_rad": 0.20798367261886597
+      },
+      {
+        "canonical_id": "left_pinky_PIP",
+        "target_total_viscous_damping_nm_s_per_rad": 0.03999245539307594
+      },
+      {
+        "canonical_id": "left_pinky_DIP",
+        "target_total_viscous_damping_nm_s_per_rad": 0.031512677669525146
+      }
+    ]
+  },
+  "baseline_drift": {
+    "reference": "frozen friction scale=0 MuJoCo run",
+    "maximum_joint_rad": 1e-9,
+    "maximum_frame_position_m": 1e-9,
+    "maximum_frame_orientation_rad": 1e-9,
+    "require_exact_samples": true
+  },
+  "primary_metrics": [
+    {
+      "metric_id": "left_pinky_CMC_window_peak",
+      "kind": "joint_max_abs_rad",
+      "canonical_id": "left_pinky_CMC",
+      "window_start_s": 0.11,
+      "window_end_s": 0.16,
+      "frozen_baseline_value": 0.00908693500546992,
+      "frozen_baseline_peak_time_s": 0.13
+    },
+    {
+      "metric_id": "left_thumb_DP_window_peak",
+      "kind": "frame_position_max_m",
+      "canonical_id": "left_thumb_DP",
+      "window_start_s": 0.11,
+      "window_end_s": 0.17,
+      "frozen_baseline_value": 0.0008506666265246331,
+      "frozen_baseline_peak_time_s": 0.132
+    }
+  ],
+  "secondary_metrics": [
+    {
+      "metric_id": "global_joint_max_abs_rad",
+      "definition": "maximum absolute canonical joint-position difference over all 251 samples and 22 joints"
+    },
+    {
+      "metric_id": "global_frame_position_max_m",
+      "definition": "maximum Euclidean distal-frame XYZ difference over all 251 samples and 5 frames"
+    },
+    {
+      "metric_id": "global_frame_orientation_max_rad",
+      "definition": "maximum shortest-arc normalized-quaternion geodesic angle over all 251 samples and 5 frames"
+    },
+    {
+      "metric_id": "joint_rmse_rad",
+      "definition": "sqrt(sum of squared canonical joint-position differences divided by 251*22)"
+    },
+    {
+      "metric_id": "frame_position_rms_m",
+      "definition": "sqrt(sum of squared distal-frame XYZ Euclidean distances divided by 251*5)"
+    }
+  ],
+  "decision_rule": {
+    "supports_registered_local_gap_reduction_under_total_viscous_retuning_if_each_reduction_at_least": 0.25,
+    "rejects_total_viscous_alignment_as_common_major_local_explanation_if_each_reduction_at_most": 0.1,
+    "otherwise": "mixed_or_inconclusive",
+    "global_joint_frame_orientation_and_rms_metrics": "secondary_exploratory"
+  },
+  "claim_boundary": "This two-run endpoint diagnostic can only test the local effect of adjusting MuJoCo controller Kv so controller Kv plus MuJoCo passive joint damping equals frozen OV explicit-PD Kd under friction=0 for one left small_step trajectory. It does not align passive PhysX damping, establish physical parameter equivalence, fully explain the formal divergence, identify a backend bug, change Gate 0 pass readiness, or generalize to other hands, scenarios, hardware, or Sim2Real."
+}

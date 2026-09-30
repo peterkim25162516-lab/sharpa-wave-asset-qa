@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "experiment_id": "left-thumb-dp-common-mujoco-fk-attribution-v1",
+  "classification": "post_hoc_mechanistic_analysis_not_formal_gate0",
+  "analysis_plan_status": "frozen_after_single_step_feasibility_probe_before_full_window_computation",
+  "scope": "left small_step base r01 position-only thumb_DP window for frozen OVPhysX, same-source MuJoCo control, and total-viscous MuJoCo treatment",
+  "feasibility_disclosure": {
+    "inspected_before_plan_freeze": true,
+    "step": 66,
+    "time_s": 0.132,
+    "state": "frozen OVPhysX canonical joint_positions replayed through MuJoCo FK",
+    "maximum_same_q_position_error_m": 7.460983893527364e-08,
+    "maximum_same_q_orientation_error_rad": 1.3099468336007775e-06,
+    "coverage": "all five left distal frames at one already-selected peak step",
+    "consequence": "The full-window analysis is explicitly post-hoc and is not an independent blind confirmation."
+  },
+  "frozen_inputs": {
+    "parent_bundle_root_sha256": "a27826a0909afbf550f2bda198d7c7aab564e019a06a40aa63e829de92c0018c",
+    "parent_bundle_manifest_sha256": "2022d931615b678f8669c5847efe292dec18c08b6945c1476b034b49390bda81",
+    "parent_bundle_payload_count": 39,
+    "parent_bundle_total_size_bytes": 5750736,
+    "parent_summary_sha256": "ca797913701fd8ddd7bb7ec65c1bf35c1c95adbfd9a4e3ee34056dc270f87d3b",
+    "parent_source_revision": "85ca5680eec5be9197af0f2437e6eb913d0262a8",
+    "parent_source_tree": "dba00025c35014257880bf18c4e751bf949c4c29",
+    "formal_bundle_root_sha256": "d2e028d884f5484f7a7d5ecc0506201ff751c0847ed87b7a63d3a3b8cd056505",
+    "formal_source_revision": "c571d9bb37a619fe9e867447d3be448acc615e3c",
+    "formal_source_tree": "fe86e1ce279770db1a70ce74609166b282f151ff",
+    "formal_ovphysx_run_sha256": "008ed804406ee32e58a5b701bc9feb9f4123a23bc13d521392a2525d0de2dc30",
+    "formal_ovphysx_source_sha256": "4f2fe61ad249e8442456cb97223a17813d82d8c5a3526667cc5052da37ca6022",
+    "friction_source_revision": "e238b29934f2e341703ba1aa7decdab7cae53688",
+    "friction_zero_run_sha256": "b9e547cee1bced18aae93d0b21e6418e059a2f49f45d9cdbb8118c083fbaf758",
+    "same_source_control_run_sha256": "60004cd34f368019453e2b2c5f012b359f6d5bef47679823347673d4688b7e60",
+    "total_viscous_treatment_run_sha256": "4a0413bcdf93d6e8304dc0b0a91afdf5548696c4eaefa943e7c5a8efb3766d56",
+    "controller_kv_preregistration_sha256": "5acff5d5ce9b34a133032830e62cc831f5c583087c5e18e244367edd8464d5ba",
+    "gate0_manifest_file_sha256": "a95a1da0d38abac8b3eccf18ea0b618b4898e35a6102017a2f0e024a9a4d5244",
+    "gate0_manifest_semantic_sha256": "576d8663a71692d6f5bd148ad719c9074ce0faceca6e4169bd8fcd14dc09899e",
+    "asset_commit": "6eea427eb24189519f32b9f21674cd534d3f973c",
+    "asset_git_tree": "bb00a9d5527b8a76de576ce876ebece67d8ffde1",
+    "canonical_lf_asset_tree_sha256": "b198e39b1030f279bf531c01d7e2321339dccf4482e662e6e8c671c9499d54ad",
+    "mujoco_model_relative_path": "wave_01/left_sharpa_wave/left_sharpa_wave.xml",
+    "mujoco_model_sha256": "3cbeb46259d4ba63cbdb83085255d1a8f8031c51e0101a6622f6e7e81a64dc11",
+    "frozen_mujoco_version": "3.12.0"
+  },
+  "parent_paths": {
+    "summary": "summary.json",
+    "controller_kv_preregistration": "inputs/controller-kv.preregistration.json",
+    "gate0_manifest": "inputs/gate0.manifest.json",
+    "formal_ovphysx_run": "inputs/frozen/ovphysx.left.small_step.base.r01.run.json",
+    "friction_zero_run": "inputs/frozen/mujoco.left.small_step.base.r01.run.json",
+    "same_source_control_run": "runs/same_source_control/mujoco.left.small_step.base.r01.run.json",
+    "total_viscous_treatment_run": "runs/total_viscous_aligned_via_controller_kv_treatment/mujoco.left.small_step.base.r01.run.json"
+  },
+  "cases": {
+    "mujoco": "mujoco.left.small_step.base.r01",
+    "ovphysx": "ovphysx.left.small_step.base.r01"
+  },
+  "analysis": {
+    "hand": "left",
+    "frame": "left_thumb_DP",
+    "component": "position_xyz_m",
+    "window_start_step": 55,
+    "window_end_step": 85,
+    "sample_count": 31,
+    "dt_s": 0.002,
+    "already_selected_parent_peak_step": 66,
+    "candidate_roles": [
+      "same_source_control",
+      "total_viscous_aligned_via_controller_kv_treatment"
+    ],
+    "joint_state_source": "TraceSample.joint_positions in canonical names",
+    "backend_native_qpos_direct_use_forbidden": true,
+    "common_fk_backend": "mujoco",
+    "coordinate_transform": "identity_only_no_fit",
+    "required_joint_coverage": 22,
+    "reset_before_each_fk_replay": true,
+    "set_all_named_joint_positions": true,
+    "set_qvel_zero": true,
+    "advance_dynamics": false,
+    "fit_translation_rotation_scale_or_time_shift": false,
+    "thumb_players_in_order": [
+      "left_thumb_CMC_FE",
+      "left_thumb_CMC_AA",
+      "left_thumb_MCP_FE",
+      "left_thumb_MCP_AA",
+      "left_thumb_IP"
+    ],
+    "coalition_count_per_sample": 32,
+    "coalition_state": "start from candidate canonical q and replace only named coalition joints with frozen OV canonical q",
+    "raw_delta": "recorded OVPhysX thumb_DP xyz minus recorded candidate MuJoCo thumb_DP xyz",
+    "common_fk_delta": "MuJoCoFK(OV canonical q) minus MuJoCoFK(candidate canonical q)",
+    "closure_residual": "raw_delta minus common_fk_delta"
+  },
+  "sanity_gates": {
+    "mujoco_self_replay_max_position_error_m": 1e-10,
+    "mujoco_self_replay_max_orientation_error_rad": 1e-10,
+    "identity_world_frame_t0_all_fingertips_max_position_error_m": 1e-06,
+    "identity_world_frame_t0_all_fingertips_max_orientation_error_rad": 1e-05,
+    "empty_coalition_max_position_error_m": 1e-12,
+    "all_thumb_coalition_vs_full_ov_fk_max_position_error_m": 1e-10,
+    "non_thumb_joint_invariance_max_position_error_m": 1e-10,
+    "vector_shapley_efficiency_max_abs_error_m": 1e-12,
+    "energy_shapley_efficiency_max_abs_fraction": 1e-12,
+    "closure_denominator_min_frobenius_m": 1e-12,
+    "quaternion_unit_norm_max_abs_error": 1e-06
+  },
+  "closure_metrics": {
+    "window_ratio": "Frobenius norm of closure residual over Frobenius norm of raw delta, without centering, alignment, clipping, or fitting",
+    "peak_step_rule": "earliest step maximizing raw per-step Euclidean position distance within the frozen window",
+    "peak_ratio": "Euclidean closure residual at the selected peak step over raw Euclidean distance at that step"
+  },
+  "closure_decision_rule": {
+    "closes_if_window_ratio_at_most": 0.1,
+    "closes_if_peak_ratio_at_most": 0.1,
+    "does_not_close_if_window_ratio_at_least": 0.5,
+    "does_not_close_if_peak_ratio_at_least": 0.5,
+    "otherwise": "mixed",
+    "overall_support_if": "both control and treatment are closes",
+    "overall_reject_for_both_if": "at least one candidate is does_not_close",
+    "overall_otherwise": "mixed"
+  },
+  "shapley": {
+    "method": "exact five-player enumeration with factorial weights",
+    "vector_value": "per-step xyz displacement from empty coalition",
+    "energy_value": "raw window squared Frobenius energy minus squared residual energy after applying a coalition displacement",
+    "energy_fraction_denominator": "raw window squared Frobenius energy",
+    "dominant_positive_minimum_fraction_points": 0.25,
+    "dominant_positive_minimum_share_of_positive_attribution": 0.5,
+    "material_adverse_maximum_fraction_points": -0.1,
+    "ranking": "descending signed energy fraction, canonical player order as exact-tie break"
+  },
+  "output_policy": {
+    "raw_bundle_visibility": "private",
+    "reason": "copied frozen OVPhysX evidence contains machine, GPU, and process identifiers",
+    "public_safe_outputs": [
+      "sanitized report",
+      "sanitized summary",
+      "input and output hashes",
+      "aggregate closure and attribution metrics"
+    ]
+  },
+  "claim_boundary": "This offline, post-hoc, simulation-only analysis asks whether the already observed left thumb_DP position gap is kinematically consistent with the recorded canonical joint-state gap under one common MuJoCo model. It is not a dynamics intervention, independent confirmation, parameter identification, physical equivalence proof, backend bug finding, hardware or Sim2Real evidence, or a change to formal Gate 0 DIVERGENT / pass_ready=false. Shapley values are model- and baseline-dependent counterfactual allocations over the fixed five-joint player set."
+}

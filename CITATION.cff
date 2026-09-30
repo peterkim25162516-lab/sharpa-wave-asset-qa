@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If this validator is useful in your work, please cite the repository and the upstream Sharpa Wave assets."
+title: "Sharpa Wave Asset QA"
+type: software
+authors:
+  - family-names: Jin
+    given-names: Qiyan
+version: 0.1.0
+license: Apache-2.0
+
+repository-code: "https://github.com/peterkim25162516-lab/sharpa-wave-asset-qa"
+url: "https://github.com/peterkim25162516-lab/sharpa-wave-asset-qa"

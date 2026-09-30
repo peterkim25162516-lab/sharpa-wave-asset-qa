@@ -1,0 +1,325 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wave-asset-qa.local/schemas/contact-c0-manifest.schema.json",
+  "title": "WaveSimParity Contact Gate C0 frozen manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "provenance",
+    "simulators",
+    "hands",
+    "fixture",
+    "scenario",
+    "conditions",
+    "run_policy",
+    "thresholds",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "manifest_id": { "const": "wavesimparity-contact-c0" },
+    "provenance": { "$ref": "#/$defs/provenance" },
+    "simulators": { "const": ["mujoco", "ovphysx"] },
+    "hands": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        { "$ref": "#/$defs/leftHand" },
+        { "$ref": "#/$defs/rightHand" }
+      ],
+      "items": false
+    },
+    "fixture": { "$ref": "#/$defs/fixture" },
+    "scenario": { "$ref": "#/$defs/scenario" },
+    "conditions": {
+      "const": [
+        { "condition_id": "contact", "pair_collision_enabled": true },
+        { "condition_id": "sham", "pair_collision_enabled": false }
+      ]
+    },
+    "run_policy": { "$ref": "#/$defs/runPolicy" },
+    "thresholds": { "$ref": "#/$defs/thresholds" },
+    "claim_boundary": { "$ref": "#/$defs/claimBoundary" }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "commit",
+        "asset_git_tree",
+        "canonical_lf_asset_tree_sha256",
+        "asset_root"
+      ],
+      "properties": {
+        "repository": { "const": "https://github.com/sharpa-robotics/sharpa-urdf-usd-xml.git" },
+        "commit": { "const": "6eea427eb24189519f32b9f21674cd534d3f973c" },
+        "asset_git_tree": { "const": "bb00a9d5527b8a76de576ce876ebece67d8ffde1" },
+        "canonical_lf_asset_tree_sha256": { "const": "b198e39b1030f279bf531c01d7e2321339dccf4482e662e6e8c671c9499d54ad" },
+        "asset_root": { "const": "wave_01" }
+      }
+    },
+    "leftHand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["side", "model_name", "mounting", "control_mode", "model_paths", "joint_names", "distal_frame_names"],
+      "properties": {
+        "side": { "const": "left" },
+        "model_name": { "const": "left_sharpa_wave" },
+        "mounting": { "const": "fixed_base" },
+        "control_mode": { "const": "position" },
+        "model_paths": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mujoco", "ovphysx"],
+          "properties": {
+            "mujoco": { "const": "wave_01/left_sharpa_wave/left_sharpa_wave.xml" },
+            "ovphysx": { "const": "wave_01/left_sharpa_wave/left_sharpa_wave.usda" }
+          }
+        },
+        "joint_names": {
+          "const": [
+            "left_thumb_CMC_FE", "left_thumb_CMC_AA", "left_thumb_MCP_FE", "left_thumb_MCP_AA", "left_thumb_IP",
+            "left_index_MCP_FE", "left_index_MCP_AA", "left_index_PIP", "left_index_DIP",
+            "left_middle_MCP_FE", "left_middle_MCP_AA", "left_middle_PIP", "left_middle_DIP",
+            "left_ring_MCP_FE", "left_ring_MCP_AA", "left_ring_PIP", "left_ring_DIP",
+            "left_pinky_CMC", "left_pinky_MCP_FE", "left_pinky_MCP_AA", "left_pinky_PIP", "left_pinky_DIP"
+          ]
+        },
+        "distal_frame_names": {
+          "const": ["left_index_DP", "left_middle_DP", "left_pinky_DP", "left_ring_DP", "left_thumb_DP"]
+        }
+      }
+    },
+    "rightHand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["side", "model_name", "mounting", "control_mode", "model_paths", "joint_names", "distal_frame_names"],
+      "properties": {
+        "side": { "const": "right" },
+        "model_name": { "const": "right_sharpa_wave" },
+        "mounting": { "const": "fixed_base" },
+        "control_mode": { "const": "position" },
+        "model_paths": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mujoco", "ovphysx"],
+          "properties": {
+            "mujoco": { "const": "wave_01/right_sharpa_wave/right_sharpa_wave.xml" },
+            "ovphysx": { "const": "wave_01/right_sharpa_wave/right_sharpa_wave.usda" }
+          }
+        },
+        "joint_names": {
+          "const": [
+            "right_thumb_CMC_FE", "right_thumb_CMC_AA", "right_thumb_MCP_FE", "right_thumb_MCP_AA", "right_thumb_IP",
+            "right_index_MCP_FE", "right_index_MCP_AA", "right_index_PIP", "right_index_DIP",
+            "right_middle_MCP_FE", "right_middle_MCP_AA", "right_middle_PIP", "right_middle_DIP",
+            "right_ring_MCP_FE", "right_ring_MCP_AA", "right_ring_PIP", "right_ring_DIP",
+            "right_pinky_CMC", "right_pinky_MCP_FE", "right_pinky_MCP_AA", "right_pinky_PIP", "right_pinky_DIP"
+          ]
+        },
+        "distal_frame_names": {
+          "const": ["right_index_DP", "right_middle_DP", "right_pinky_DP", "right_ring_DP", "right_thumb_DP"]
+        }
+      }
+    },
+    "fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["profile_id", "probe", "target", "material", "collision_policy"],
+      "properties": {
+        "profile_id": { "const": "synthetic_sphere_box_v1" },
+        "probe": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "parent_frame_suffix", "local_center_m", "radius_m", "preserve_mass_properties"],
+          "properties": {
+            "kind": { "const": "sphere" },
+            "parent_frame_suffix": { "const": "index_DP" },
+            "local_center_m": { "const": [0.025, 0.0, 0.0] },
+            "radius_m": { "const": 0.005 },
+            "preserve_mass_properties": { "const": true }
+          }
+        },
+        "target": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "world_center_m", "half_extents_m", "top_surface_z_m"],
+          "properties": {
+            "kind": { "const": "static_box" },
+            "world_center_m": { "const": [0.0, 0.0, 0.120] },
+            "half_extents_m": { "const": [0.150, 0.150, 0.010] },
+            "top_surface_z_m": { "const": 0.130 }
+          }
+        },
+        "material": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["static_friction", "dynamic_friction", "restitution"],
+          "properties": {
+            "static_friction": { "const": 0.0 },
+            "dynamic_friction": { "const": 0.0 },
+            "restitution": { "const": 0.0 }
+          }
+        },
+        "collision_policy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "native_hand_collisions_enabled", "self_collisions_enabled", "ccd_enabled", "allowed_pair_id", "mujoco_condim",
+            "pair_active_source", "pair_active_force_threshold_n", "pair_active_threshold_freeze_basis",
+            "excluded_pilot_scientific_evidence", "raw_pair_force_cross_simulator_comparable",
+            "expected_enabled_collision_shape_count", "expected_filtered_sensor_body_count", "expected_filtered_target_count"
+          ],
+          "properties": {
+            "native_hand_collisions_enabled": { "const": false },
+            "self_collisions_enabled": { "const": false },
+            "ccd_enabled": { "const": false },
+            "allowed_pair_id": { "const": "synthetic_index_probe__static_box" },
+            "mujoco_condim": { "const": 1 },
+            "pair_active_source": { "const": "direct_filtered_selected_pair_force_norm_n" },
+            "pair_active_force_threshold_n": { "const": 0.0001 },
+            "pair_active_threshold_freeze_basis": { "const": "excluded_engineering_pilot_before_formal_source_freeze" },
+            "excluded_pilot_scientific_evidence": { "const": false },
+            "raw_pair_force_cross_simulator_comparable": { "const": false },
+            "expected_enabled_collision_shape_count": { "const": 2 },
+            "expected_filtered_sensor_body_count": { "const": 1 },
+            "expected_filtered_target_count": { "const": 1 }
+          }
+        }
+      }
+    },
+    "scenario": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scenario_id", "kind", "duration_s", "dt_s", "gravity_m_s2", "initial_position_rad",
+        "driven_joint_targets_rad", "schedule", "smoothstep_profile"
+      ],
+      "properties": {
+        "scenario_id": { "const": "press_hold_release" },
+        "kind": { "const": "smooth_press_hold_release" },
+        "duration_s": { "const": 7.0 },
+        "dt_s": { "const": 0.002 },
+        "gravity_m_s2": { "const": [0.0, 0.0, 0.0] },
+        "initial_position_rad": { "const": 0.0 },
+        "driven_joint_targets_rad": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["index_MCP_FE", "index_MCP_AA", "index_PIP", "index_DIP"],
+          "properties": {
+            "index_MCP_FE": { "const": 0.60 },
+            "index_MCP_AA": { "const": 0.0 },
+            "index_PIP": { "const": 0.90 },
+            "index_DIP": { "const": 0.60 }
+          }
+        },
+        "schedule": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["settle_end_s", "press_end_s", "hold_end_s", "retract_end_s", "recovery_end_s"],
+          "properties": {
+            "settle_end_s": { "const": 0.5 },
+            "press_end_s": { "const": 3.0 },
+            "hold_end_s": { "const": 4.0 },
+            "retract_end_s": { "const": 6.5 },
+            "recovery_end_s": { "const": 7.0 }
+          }
+        },
+        "smoothstep_profile": { "const": "quintic_10u3_minus_15u4_plus_6u5" }
+      }
+    },
+    "runPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repeat_count", "dt_halving_scenario_ids", "debounce_window_s", "minimum_completion_fraction", "fresh_process_per_case"],
+      "properties": {
+        "repeat_count": { "const": 2 },
+        "dt_halving_scenario_ids": { "const": ["press_hold_release"] },
+        "debounce_window_s": { "const": 0.004 },
+        "minimum_completion_fraction": { "const": 1.0 },
+        "fresh_process_per_case": { "const": true }
+      }
+    },
+    "thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["admission", "repeatability", "dt_halving", "cross_simulator"],
+      "properties": {
+        "admission": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "fixture_geometry_max_abs_error_m", "material_zero_max_abs_error", "initial_gap_min_m",
+            "sham_hold_mean_gap_max_m", "recovery_gap_min_m", "contact_hold_duty_min"
+          ],
+          "properties": {
+            "fixture_geometry_max_abs_error_m": { "const": 0.000001 },
+            "material_zero_max_abs_error": { "const": 0.000000001 },
+            "initial_gap_min_m": { "const": 0.050 },
+            "sham_hold_mean_gap_max_m": { "const": -0.005 },
+            "recovery_gap_min_m": { "const": 0.050 },
+            "contact_hold_duty_min": { "const": 0.95 }
+          }
+        },
+        "repeatability": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["joint_or_effect_max_abs_rad", "probe_gap_or_blocked_max_abs_m", "orientation_or_effect_max_abs_rad", "pair_active_exact", "event_interval_exact"],
+          "properties": {
+            "joint_or_effect_max_abs_rad": { "const": 0.000000001 },
+            "probe_gap_or_blocked_max_abs_m": { "const": 0.000000001 },
+            "orientation_or_effect_max_abs_rad": { "const": 0.000000001 },
+            "pair_active_exact": { "const": true },
+            "event_interval_exact": { "const": true }
+          }
+        },
+        "dt_halving": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["joint_or_effect_max_abs_rad", "probe_gap_or_blocked_max_abs_m", "orientation_or_effect_max_abs_rad", "event_midpoint_max_abs_s", "hold_duty_max_abs"],
+          "properties": {
+            "joint_or_effect_max_abs_rad": { "const": 0.01 },
+            "probe_gap_or_blocked_max_abs_m": { "const": 0.001 },
+            "orientation_or_effect_max_abs_rad": { "const": 0.02 },
+            "event_midpoint_max_abs_s": { "const": 0.004 },
+            "hold_duty_max_abs": { "const": 0.01 }
+          }
+        },
+        "cross_simulator": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["event_midpoint_max_abs_s", "hold_duty_max_abs", "onset_gap_max_abs_m", "steady_hold_mean_gap_max_abs_m", "joint_effect_max_abs_rad", "blocked_travel_max_abs_m", "orientation_effect_max_abs_rad"],
+          "properties": {
+            "event_midpoint_max_abs_s": { "const": 0.010 },
+            "hold_duty_max_abs": { "const": 0.02 },
+            "onset_gap_max_abs_m": { "const": 0.001 },
+            "steady_hold_mean_gap_max_abs_m": { "const": 0.001 },
+            "joint_effect_max_abs_rad": { "const": 0.02 },
+            "blocked_travel_max_abs_m": { "const": 0.002 },
+            "orientation_effect_max_abs_rad": { "const": 0.05 }
+          }
+        }
+      }
+    },
+    "claimBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["synthetic_fixture_only", "native_fingertip_geometry_validated", "full_isaac_sim", "dual_hand", "floating_base", "hardware", "sim2real"],
+      "properties": {
+        "synthetic_fixture_only": { "const": true },
+        "native_fingertip_geometry_validated": { "const": false },
+        "full_isaac_sim": { "const": false },
+        "dual_hand": { "const": false },
+        "floating_base": { "const": false },
+        "hardware": { "const": false },
+        "sim2real": { "const": false }
+      }
+    }
+  }
+}

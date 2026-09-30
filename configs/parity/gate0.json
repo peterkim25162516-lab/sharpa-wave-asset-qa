@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "manifest_id": "wavesimparity-gate0",
+  "provenance": {
+    "repository": "https://github.com/sharpa-robotics/sharpa-urdf-usd-xml.git",
+    "commit": "6eea427eb24189519f32b9f21674cd534d3f973c",
+    "asset_git_tree": "bb00a9d5527b8a76de576ce876ebece67d8ffde1",
+    "canonical_lf_asset_tree_sha256": "b198e39b1030f279bf531c01d7e2321339dccf4482e662e6e8c671c9499d54ad",
+    "asset_root": "wave_01"
+  },
+  "simulators": ["mujoco", "ovphysx"],
+  "hands": [
+    {
+      "side": "left",
+      "model_name": "left_sharpa_wave",
+      "mounting": "fixed_base",
+      "control_mode": "position",
+      "model_paths": {
+        "mujoco": "wave_01/left_sharpa_wave/left_sharpa_wave.xml",
+        "ovphysx": "wave_01/left_sharpa_wave/left_sharpa_wave.usda"
+      },
+      "joint_names": [
+        "left_thumb_CMC_FE",
+        "left_thumb_CMC_AA",
+        "left_thumb_MCP_FE",
+        "left_thumb_MCP_AA",
+        "left_thumb_IP",
+        "left_index_MCP_FE",
+        "left_index_MCP_AA",
+        "left_index_PIP",
+        "left_index_DIP",
+        "left_middle_MCP_FE",
+        "left_middle_MCP_AA",
+        "left_middle_PIP",
+        "left_middle_DIP",
+        "left_ring_MCP_FE",
+        "left_ring_MCP_AA",
+        "left_ring_PIP",
+        "left_ring_DIP",
+        "left_pinky_CMC",
+        "left_pinky_MCP_FE",
+        "left_pinky_MCP_AA",
+        "left_pinky_PIP",
+        "left_pinky_DIP"
+      ],
+      "distal_frame_names": [
+        "left_index_DP",
+        "left_middle_DP",
+        "left_pinky_DP",
+        "left_ring_DP",
+        "left_thumb_DP"
+      ]
+    },
+    {
+      "side": "right",
+      "model_name": "right_sharpa_wave",
+      "mounting": "fixed_base",
+      "control_mode": "position",
+      "model_paths": {
+        "mujoco": "wave_01/right_sharpa_wave/right_sharpa_wave.xml",
+        "ovphysx": "wave_01/right_sharpa_wave/right_sharpa_wave.usda"
+      },
+      "joint_names": [
+        "right_thumb_CMC_FE",
+        "right_thumb_CMC_AA",
+        "right_thumb_MCP_FE",
+        "right_thumb_MCP_AA",
+        "right_thumb_IP",
+        "right_index_MCP_FE",
+        "right_index_MCP_AA",
+        "right_index_PIP",
+        "right_index_DIP",
+        "right_middle_MCP_FE",
+        "right_middle_MCP_AA",
+        "right_middle_PIP",
+        "right_middle_DIP",
+        "right_ring_MCP_FE",
+        "right_ring_MCP_AA",
+        "right_ring_PIP",
+        "right_ring_DIP",
+        "right_pinky_CMC",
+        "right_pinky_MCP_FE",
+        "right_pinky_MCP_AA",
+        "right_pinky_PIP",
+        "right_pinky_DIP"
+      ],
+      "distal_frame_names": [
+        "right_index_DP",
+        "right_middle_DP",
+        "right_pinky_DP",
+        "right_ring_DP",
+        "right_thumb_DP"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "zero_hold",
+      "kind": "zero_hold",
+      "duration_s": 0.5,
+      "dt_s": 0.002,
+      "gravity_m_s2": [0.0, 0.0, 0.0],
+      "initial_position_rad": 0.0,
+      "target_position_rad": 0.0,
+      "step_start_s": null,
+      "expect_no_contacts": true
+    },
+    {
+      "scenario_id": "small_step",
+      "kind": "small_step",
+      "duration_s": 0.5,
+      "dt_s": 0.002,
+      "gravity_m_s2": [0.0, 0.0, 0.0],
+      "initial_position_rad": 0.0,
+      "target_position_rad": 0.05,
+      "step_start_s": 0.1,
+      "expect_no_contacts": true
+    },
+    {
+      "scenario_id": "gravity_settling",
+      "kind": "gravity_settling",
+      "duration_s": 1.0,
+      "dt_s": 0.002,
+      "gravity_m_s2": [0.0, 0.0, -9.81],
+      "initial_position_rad": 0.0,
+      "target_position_rad": 0.0,
+      "step_start_s": null,
+      "expect_no_contacts": true
+    }
+  ],
+  "run_policy": {
+    "repeat_count": 2,
+    "dt_halving_scenario_ids": ["small_step"],
+    "minimum_completion_fraction": 1.0
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "correction": {
+    "adapter_or_runner_scientific_behavior_changed": false,
+    "control_or_target_changed": false,
+    "dt_or_case_order_changed": false,
+    "failed_attempt_artifacts_must_remain_unmodified": true,
+    "formal_gate0_pass_ready_unchanged": false,
+    "formal_gate0_status_unchanged": "DIVERGENT",
+    "full_24_case_matrix_rerun_required": true,
+    "metrics_or_thresholds_changed": false,
+    "operator_invocation_changed_to_match_frozen_asset_identity": true,
+    "scenario_or_manifest_changed": false,
+    "scientific_execution_change_scope": "operator_asset_materialization_compliance_only",
+    "scientific_protocol_fields_changed": [],
+    "supporting_provenance_finalizer_and_local_launcher_plumbing_changed": true
+  },
+  "corrigendum_id": "ovphysx-legacy-joint-friction-freeze-b-asset-preflight-corrigendum-v1",
+  "excluded_evidence": {
+    "local-a1": {
+      "classification": "invalid_local_worker_identity_collection",
+      "entry_count": 13,
+      "file_count": 10,
+      "reuse_allowed": false,
+      "root_sha256": "fb661580d635ae84fd6bf5d7eaa33e838c96e13b8d1b5c242ea9fedc1be10498",
+      "total_bytes": 1282435
+    },
+    "local-a2": {
+      "classification": "excluded_structurally_valid_local_campaign_evidence",
+      "entry_count": 82,
+      "file_count": 72,
+      "reuse_allowed": false,
+      "root_sha256": "998a75cf133b0baac0f1d5c2baf53469fa2d6d955bb3c277c7c621712accec1b",
+      "total_bytes": 14852439
+    },
+    "local-a3": {
+      "classification": "failed_pre_simulation_asset_tree_preflight",
+      "entry_count": 16,
+      "file_count": 13,
+      "reuse_allowed": false,
+      "root_sha256": "bff7ab75459f9ed7b8ab6b0bfd44997c7f544ec72f3ce8ba5644c0996a30eb79",
+      "total_bytes": 36508
+    },
+    "remote-a2": {
+      "classification": "invalid_remote_payload_admission_collection",
+      "entry_count": 20,
+      "file_count": 17,
+      "reuse_allowed": false,
+      "root_sha256": "155fdebc6515aa49a7f5e0aafbacb629cf348829028b2da4fedcc5a1603d3abe",
+      "total_bytes": 1245586
+    }
+  },
+  "frozen_history": {
+    "admission_correction_revision": "4156bd4cc0df996b6fab1be0e48fdbb04a65f393",
+    "admission_correction_tree": "c5966f06ef32672f490e9c40746c15e92fa96761",
+    "admission_corrigendum_blob_oid": "a7e50ece608fb1aa3eadb2f88bc472204eed5d9f",
+    "admission_corrigendum_canonical_sha256": "fccba33068aaa6d06e8269be80a3c507b95a94384272803e59e61111293237ee",
+    "admission_corrigendum_file_sha256": "6651af497d3ff1451153e3f6f3b1a03c977ded9879e5fc6389fc1b3a41c7172e",
+    "admission_corrigendum_path": "configs/parity/ovphysx_legacy_friction_freeze_b_admission_corrigendum.json",
+    "admission_corrigendum_unchanged": true,
+    "first_correction_revision": "569c66612634700a615d048d2cd7cd726d04ce5b",
+    "first_correction_tree": "612a5564ff28efc1ee870660744edf4ef5b195d4",
+    "first_corrigendum_blob_oid": "0ec18c5738aee6f0654ccbfcdb5105aeae24e4ed",
+    "first_corrigendum_canonical_sha256": "ccf01aebaca218f50f9adce9250f150d7d6e00e88bca8bd42db694c55808eff5",
+    "first_corrigendum_file_sha256": "41eba7988668c7396b042d5785dfe1b627709f5df46ac77aa94eda77d0b5595b",
+    "first_corrigendum_path": "configs/parity/ovphysx_legacy_friction_freeze_b_corrigendum.json",
+    "first_corrigendum_unchanged": true,
+    "first_execution_revision": "8bb84691c82ab0582254d21953630725d64e9395",
+    "first_execution_tree": "6052d16ddb4f66c93046a170f44a575dfe4e385e",
+    "implementation_revision": "d90e568ab83398cfc3ec4812fd0988923e5a8890",
+    "implementation_tree": "0115bf40dffb82cd8182783b433d7ebede93f416",
+    "preregistration_revision": "608f83f1f93042d713346bd102de09b0b999b588",
+    "preregistration_tree": "1d1467d9f156d1115dbcb8ff54d522f0189454cc",
+    "private_plan_file_sha256": "6017453e9e13a40f64cc53a4ad933944868b8da4540f646b2986e7138ae5c519",
+    "private_plan_sha256": "b4416b6869bdae90743ace253212ef43f7e592e30a93093f470c648261bab1ea",
+    "public_protocol_blob_oid": "c716ce9a4496d7e26384aa94b25437b8d5f0ce08",
+    "public_protocol_canonical_sha256": "de2a97ac4d73d95f564f730a5655ddf26e9b01426eefff30c73135d932cdf66b",
+    "public_protocol_file_sha256": "9967098e45e063e2a4ca6e3db8644219f55dab808e99723c892fa72d53dc79c7",
+    "public_protocol_path": "configs/parity/ovphysx_legacy_friction_freeze_b.json",
+    "public_protocol_unchanged": true
+  },
+  "incident": {
+    "actual_materialized_asset_root_recorded_in_evidence": false,
+    "actual_materialized_asset_tree_sha256_recorded_in_evidence": false,
+    "adapter_instance_created": false,
+    "attempt_classification": "aborted_local_pre_simulation_attempt",
+    "attempt_label": "local-a3",
+    "detected_by": "runner_canonical_lf_asset_tree_sha256_preflight",
+    "expected_canonical_lf_asset_tree_sha256": "b198e39b1030f279bf531c01d7e2321339dccf4482e662e6e8c671c9499d54ad",
+    "failure_class": "materialized_asset_tree_did_not_match_frozen_canonical_lf_hash",
+    "final_analysis_admitted_case_count": 0,
+    "launcher_admitted_case_count": 0,
+    "model_created": false,
+    "mujoco_runtime_imported": false,
+    "operator_disclosed_noncanonical_asset_materialization": true,
+    "remote_or_gpu_execution_occurred": false,
+    "reuse_allowed": false,
+    "run_payload_count": 0,
+    "runner_asset_preflight_entered": true,
+    "scientific_label_assigned": false,
+    "scientific_metrics_computed": false,
+    "simulator_step_count": 0,
+    "terminal_success_completion_ledger_written": false,
+    "trajectory_case_count_executed": 0,
+    "trajectory_sample_values_existed": false,
+    "trajectory_sample_values_reviewed_or_used_for_metrics_or_correction": false,
+    "worker_process_count_started": 1,
+    "worker_process_exit_verified": true
+  },
+  "incident_source": {
+    "revision": "554e59a45a0b9596ca70ad677ba2aba858002536",
+    "tree": "0335c0e5046025fae27311b0aa1b84003d811939"
+  },
+  "protocol_id": "ovphysx-legacy-joint-friction-freeze-b-v1",
+  "schema_version": 1,
+  "source_transition_policy": {
+    "incident_source_to_execution_name_status": [
+      "A\tconfigs/parity/ovphysx_legacy_friction_freeze_b_asset_preflight_corrigendum.json",
+      "M\tscripts/finalize_ovphysx_freeze_b.py",
+      "M\tscripts/run_ovphysx_freeze_b_local.py",
+      "M\ttests/test_freeze_b_finalizer.py",
+      "M\ttests/test_freeze_b_preparation_local.py"
+    ],
+    "other_paths_allowed": false,
+    "renames_allowed": false
+  },
+  "state": "POST_PREREGISTRATION_OPERATOR_ASSET_PREFLIGHT_INCIDENT_AFTER_ABORTED_LOCAL_A3_BEFORE_ANY_COMBINED_METRICS_OR_SCIENTIFIC_LABEL"
+}

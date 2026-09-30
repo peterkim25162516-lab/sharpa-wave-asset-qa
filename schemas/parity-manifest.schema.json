@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wave-asset-qa.local/schemas/parity-manifest.schema.json",
+  "title": "WaveSimParity canonical scenario manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "provenance",
+    "simulators",
+    "hands",
+    "scenarios",
+    "run_policy"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "manifest_id": { "$ref": "#/$defs/identifier" },
+    "provenance": { "$ref": "#/$defs/provenance" },
+    "simulators": {
+      "const": ["mujoco", "ovphysx"]
+    },
+    "hands": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        { "$ref": "#/$defs/leftHand" },
+        { "$ref": "#/$defs/rightHand" }
+      ],
+      "items": false
+    },
+    "scenarios": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": { "$ref": "#/$defs/scenario" },
+      "allOf": [
+        { "contains": { "properties": { "kind": { "const": "zero_hold" } }, "required": ["kind"] }, "minContains": 1, "maxContains": 1 },
+        { "contains": { "properties": { "kind": { "const": "small_step" } }, "required": ["kind"] }, "minContains": 1, "maxContains": 1 },
+        { "contains": { "properties": { "kind": { "const": "gravity_settling" } }, "required": ["kind"] }, "minContains": 1, "maxContains": 1 }
+      ]
+    },
+    "run_policy": { "$ref": "#/$defs/runPolicy" }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_.-]*$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "relativeXmlPath": {
+      "type": "string",
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+\\.xml$"
+    },
+    "relativeUsdaPath": {
+      "type": "string",
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+\\.usda$"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "commit", "asset_git_tree", "canonical_lf_asset_tree_sha256", "asset_root"],
+      "properties": {
+        "repository": { "type": "string", "pattern": "^https://" },
+        "commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "asset_git_tree": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "canonical_lf_asset_tree_sha256": {
+          "$ref": "#/$defs/sha256",
+          "description": "SHA-256 of the pinned wave_01 checkout materialized with LF line endings; the Git tree object is the cross-platform identity."
+        },
+        "asset_root": { "type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$" }
+      }
+    },
+    "modelPaths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mujoco", "ovphysx"],
+      "properties": {
+        "mujoco": { "$ref": "#/$defs/relativeXmlPath" },
+        "ovphysx": { "$ref": "#/$defs/relativeUsdaPath" }
+      }
+    },
+    "hand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "side",
+        "model_name",
+        "mounting",
+        "control_mode",
+        "model_paths",
+        "joint_names",
+        "distal_frame_names"
+      ],
+      "properties": {
+        "side": { "enum": ["left", "right"] },
+        "model_name": { "enum": ["left_sharpa_wave", "right_sharpa_wave"] },
+        "mounting": { "const": "fixed_base" },
+        "control_mode": { "const": "position" },
+        "model_paths": { "$ref": "#/$defs/modelPaths" },
+        "joint_names": {
+          "type": "array",
+          "minItems": 22,
+          "maxItems": 22,
+          "uniqueItems": true,
+          "items": { "type": "string" }
+        },
+        "distal_frame_names": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "_DP$" }
+        }
+      }
+    },
+    "leftHand": {
+      "allOf": [
+        { "$ref": "#/$defs/hand" },
+        {
+          "properties": {
+            "side": { "const": "left" },
+            "model_name": { "const": "left_sharpa_wave" }
+          }
+        }
+      ]
+    },
+    "rightHand": {
+      "allOf": [
+        { "$ref": "#/$defs/hand" },
+        {
+          "properties": {
+            "side": { "const": "right" },
+            "model_name": { "const": "right_sharpa_wave" }
+          }
+        }
+      ]
+    },
+    "vector3": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": { "type": "number" }
+    },
+    "scenario": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scenario_id",
+        "kind",
+        "duration_s",
+        "dt_s",
+        "gravity_m_s2",
+        "initial_position_rad",
+        "target_position_rad",
+        "step_start_s",
+        "expect_no_contacts"
+      ],
+      "properties": {
+        "scenario_id": { "$ref": "#/$defs/identifier" },
+        "kind": { "enum": ["zero_hold", "small_step", "gravity_settling"] },
+        "duration_s": { "type": "number", "exclusiveMinimum": 0 },
+        "dt_s": { "type": "number", "exclusiveMinimum": 0 },
+        "gravity_m_s2": { "$ref": "#/$defs/vector3" },
+        "initial_position_rad": {
+          "const": 0.0,
+          "description": "Canonical fixed-base Gate 0 initial position applied to all 22 joints before t=0 is sampled."
+        },
+        "target_position_rad": { "type": "number" },
+        "step_start_s": { "type": ["number", "null"] },
+        "expect_no_contacts": {
+          "type": "boolean",
+          "description": "Declares an intentionally contact-free setup. When a backend exposes contact observations, any observed contact is an error; this flag does not imply that contact observation is available."
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "kind": { "const": "zero_hold" } }, "required": ["kind"] },
+          "then": {
+            "properties": {
+              "gravity_m_s2": { "const": [0.0, 0.0, 0.0] },
+              "target_position_rad": { "const": 0.0 },
+              "step_start_s": { "const": null }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "kind": { "const": "small_step" } }, "required": ["kind"] },
+          "then": {
+            "properties": {
+              "gravity_m_s2": { "const": [0.0, 0.0, 0.0] },
+              "target_position_rad": { "type": "number", "exclusiveMinimum": 0 },
+              "step_start_s": { "type": "number", "exclusiveMinimum": 0 }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "kind": { "const": "gravity_settling" } }, "required": ["kind"] },
+          "then": {
+            "properties": {
+              "gravity_m_s2": { "not": { "const": [0.0, 0.0, 0.0] } },
+              "target_position_rad": { "const": 0.0 },
+              "step_start_s": { "const": null }
+            }
+          }
+        }
+      ]
+    },
+    "runPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repeat_count", "dt_halving_scenario_ids", "minimum_completion_fraction"],
+      "properties": {
+        "repeat_count": { "type": "integer", "minimum": 2 },
+        "dt_halving_scenario_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/identifier" }
+        },
+        "minimum_completion_fraction": { "const": 1.0 }
+      }
+    }
+  }
+}
