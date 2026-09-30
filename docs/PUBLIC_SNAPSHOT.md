@@ -25,3 +25,16 @@ Assets are fetched separately and remain ignored; CI performs this fetch automat
 The original source snapshot was `6de3f6b84c6f808bca44e57381265c6861601f23`.
 Initial GitHub publication date: 2026-09-30 (Asia/Shanghai).
 This is an unofficial, simulation-only project.
+
+## Publication verification
+
+The sanitized checkout was tested on Windows with Python 3.12 on 2026-09-30:
+`1007 passed, 3 skipped` (124.29 seconds). The three skipped tests require ignored
+superseded analysis bundles or private Freeze B inputs. The retained original project
+passed all 1010 tests with those inputs present. Public checkout verification does not
+claim that those private-bundle tests were executed from a fresh public clone.
+
+All 14 public JSON/Markdown reports match the canonical files from the original
+commit byte-for-byte. The publication contains only tracked source, tests, documentation,
+dependency metadata and those public reports. Remote identifiers were replaced consistently,
+and the new public Git history uses the GitHub noreply author address.
