@@ -1,6 +1,10 @@
 # Publication checklist
 
-This repository is intentionally local-only until every item below is checked.
+This is the historical v0.1 planning checklist, retained for context. Unchecked items
+are not claims that those checks have been performed. The public snapshot's actual
+scope, provenance and reproducibility requirements are recorded in
+[PUBLIC_SNAPSHOT.md](PUBLIC_SNAPSHOT.md); initial publication does not declare a new
+tagged release or a passing cross-simulator result.
 
 ## Evidence and reproducibility
 
